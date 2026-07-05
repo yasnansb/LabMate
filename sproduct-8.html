@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UFT-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>LabMate Laboratory</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/> 
+    <link rel="stylesheet" href="styles.css"
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="images/logo.png" class ="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Main</a></li>
+                <li><a class="active" href="Page1.html">Machinaries</a></li>
+                <li><a href="Laboratory.html">Laboratory</a></li>
+                <li><a href="Contact-us.html">Contact Us</a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar" class="fas fa-outdent"> </i>
+        
+        </div>
+    
+    </section>
+    
+<section id="prodetails" class="section-p1">
+    <div class="single-pro-image">
+        <img src="images/products/f8.png" width="100%" id="MainImg" alt="">
+        
+        <div class="small-img-group">
+            <div class="small-img-col">
+                <img src="images/products/f8.png" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="images/products/f8 1.png" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="images/products/f8 2.png" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="images/products/f8 3.png" width="100%" class="small-img" alt="">
+            </div>
+        
+        </div>
+    
+    
+    
+    </div>
+    
+    
+    <div class="single-pro-details">
+        <h2>PCR machine</h2>
+        <h4>Instrument used to amplify segments of DNA or RNA</h4>
+        <span>A PCR machine (thermal cycler) is an instrument that automates the temperature cycling required for DNA amplification. It rapidly and precisely heats and cools a reaction block (holding tubes or 96/384-well plates) to execute the three main steps of PCR: denaturation (~95°C to separate DNA strands), annealing (~50–65°C for primer binding), and extension (~72°C for Taq polymerase to synthesize new DNA). It uses Peltier elements for accurate temperature control and a heated lid to prevent condensation and evaporation from the reaction tubes. Advanced models feature gradient functions to test multiple annealing temperatures simultaneously and fast ramping rates for quicker runs.</span>
+    
+    </div>
+    
+    </section>
+
+    
+    
+
+    
+<section id="footer" class="section-p1">
+    <h4>About Us</h4>
+    <p>We are university students who wanted to make an online lab for those who need it<br>hope you enjoy this experience with us!</p>
+    <div class="icons">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-telegram"></i>
+    </div>
+    
+    </section>
+
+<script>
+    var MainImg = document.getElementById("MainImg");
+    var smallimg = document.getElementsByClassName("small-img");
+    
+    smallimg[0].onclick = function(){
+        MainImg.src = smallimg[0].src;
+    }
+    smallimg[1].onclick = function(){
+        MainImg.src = smallimg[1].src;
+    }
+    smallimg[2].onclick = function(){
+        MainImg.src = smallimg[2].src;
+    }
+    smallimg[3].onclick = function(){
+        MainImg.src = smallimg[3].src;
+    }
+    
+    </script>
+    
+ 
+    <script src="script.js"></script>
+    
+
+
+</body>
+
+</html>

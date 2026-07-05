@@ -1,0 +1,3562 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabMate Laboratory</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/> 
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="we can have a logo picture here" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Main</a></li>
+                <li><a href="Page1.html">Machinaries</a></li>
+                <li><a class="active" href="Laboratory.html">Laboratory</a></li>
+                <li><a href="Contact-us.html">Contact Us</a></li>
+                <li><a href="#" id="calc-toggle">Calculator</a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar" class="fas fa-outdent"> </i>
+        </div>
+    </section>
+
+    <style>
+        /* ---------- Header---------- */
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0a0a0a;
+            padding: 14px 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        #header .logo {
+            max-height: 36px;
+        }
+
+        #header #navbar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+
+        #header #navbar li {
+            list-style: none;
+        }
+
+        #header #navbar li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        #header #navbar li a:hover,
+        #header #navbar li a.active {
+            color: #4aa8ff;
+        }
+
+        #header #navbar #close {
+            display: none;
+            color: #ffffff;
+            font-size: 20px;
+        }
+
+        #header #mobile {
+            display: none;
+        }
+
+        /* Mobile: collapse to hamburger menu */
+        @media (max-width: 799px) {
+            #header #navbar {
+                position: fixed;
+                top: 0;
+                right: -300px;
+                flex-direction: column;
+                align-items: flex-start;
+                background: #0a0a0a;
+                height: 100vh;
+                width: 280px;
+                padding: 70px 30px;
+                gap: 24px;
+                transition: right 0.3s ease;
+            }
+
+            #header #navbar.active {
+                right: 0;
+            }
+
+            #header #navbar #close {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            #header #mobile {
+                display: block;
+                cursor: pointer;
+            }
+
+            #header #mobile i {
+                color: #ffffff;
+                font-size: 24px;
+            }
+        }
+    </style>
+
+<!-------the content of the page------>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Biology Lab</title>
+        
+        <style>
+             
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+    body {
+    background: #1a1a1a;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    overflow: hidden; 
+    }
+.scene {
+    
+    width: 100vw; 
+    height: 100vh;
+    max-width: 100%;
+    
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    position: relative;
+}
+
+
+.lab-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover; 
+}
+           
+            .wall {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(180deg, #ccd8e2 0%, #b8cad6 55%, #a8bcc8 100%);
+            }
+
+            .wall::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image: linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.18) 1px, transparent 1px);
+                background-size: 80px 80px;
+            }
+
+           
+            .ceiling {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 36px;
+                background: #b0c4d4;
+                z-index: 2;
+            }
+
+         
+            .light-fixture {
+                position: absolute;
+                top: 8px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 340px;
+                height: 14px;
+                background: #d8dce4;
+                border-radius: 4px;
+                z-index: 3;
+            }
+
+            .light-tube {
+                position: absolute;
+                top: 2px;
+                left: 6px;
+                right: 6px;
+                bottom: 2px;
+                background: linear-gradient(90deg, #e0ecff, #f8fcff, #e8f4ff);
+                border-radius: 3px;
+                box-shadow: 0 0 30px 8px rgba(220,235,255,0.5);
+            }
+
+            .light-glow {
+                position: absolute;
+                top: 36px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 500px;
+                height: 60px;
+                background: radial-gradient(ellipse, rgba(220,235,255,0.25) 0%, transparent 70%);
+                pointer-events: none;
+                z-index: 2;
+            }
+
+         
+            .window {
+                position: absolute;
+                top: 55px;
+                left: 55px;
+                width: 130px;
+                height: 160px;
+                background: linear-gradient(160deg, #dff0ff 0%, #b8d8f8 60%, #8ec8f0 100%);
+                border: 3px solid #8090a0;
+                border-radius: 2px;
+                z-index: 3;
+                box-shadow: inset 0 0 20px rgba(180,210,240,0.5);
+            }
+
+            .window::before {
+             
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(#8090a0, #8090a0) 50% 0 / 3px 100% no-repeat, linear-gradient(#8090a0, #8090a0) 0 50% / 100% 3px no-repeat;
+            }
+
+            .window-sill {
+                position: absolute;
+                top: 212px;
+                left: 46px;
+                width: 152px;
+                height: 10px;
+                background: #b0b0a8;
+                border-radius: 2px;
+                z-index: 4;
+            }
+           
+            .cabinet {
+                position: absolute;
+                top: 42px;
+                right: 30px;
+                width: 230px;
+                height: 210px;
+                background: #b0b8c0;
+                border: 1px solid #8898a8;
+                border-radius: 3px;
+                z-index: 3;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 5px;
+                padding: 5px;
+            }
+
+            .cab-door {
+                background: #c8d0d8;
+                border: 0.5px solid #9098a8;
+                border-radius: 2px;
+                position: relative;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                padding-bottom: 8px;
+                gap: 4px;
+            }
+
+           
+            .floor {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 160px;
+                background: linear-gradient(180deg, #c0b490 0%, #a89470 100%);
+                z-index: 2;
+            }
+
+            .floor::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image: linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
+                background-size: 80px 80px;
+            }
+
+            
+            .bench-body {
+                position: absolute;
+                bottom: 130px;
+                left: 30px;
+                right: 30px;
+                height: 95px;
+                background: #989890;
+                border-radius: 3px;
+                z-index: 5;
+                display: flex;
+                gap: 4px;
+                padding: 4px;
+            }
+
+            .bench-door {
+                flex: 1;
+                background: #b0b0a8;
+                border: 0.5px solid #888880;
+                border-radius: 2px;
+                position: relative;
+            }
+
+            .bench-door::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 10px;
+                height: 3px;
+                background: #606058;
+                border-radius: 2px;
+            }
+
+            .bench-top {
+                position: absolute;
+                bottom: 222px;
+                left: 22px;
+                right: 22px;
+                height: 22px;
+                background: linear-gradient(180deg, #e8e8e0, #c8c8c0);
+                border-radius: 3px;
+                z-index: 6;
+                border: 1px solid #a8a8a0;
+            }
+
+            .bench-top::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: rgba(255,255,255,0.5);
+                border-radius: 3px 3px 0 0;
+            }
+
+           
+            .counter-surface {
+                position: absolute;
+                bottom: 243px;
+                left: 22px;
+                right: 22px;
+                z-index: 7;
+            }
+            
+           
+            
+          
+            .pcr-wrap {
+                position: absolute;
+                right: 290px;
+                bottom: 243px;
+                width: 200px;
+                z-index: 8;
+            }
+
+            .pcr-machine {
+                width: 200px;
+                height: 180px;
+                background: #c8ccda;
+                border-radius: 6px 6px 4px 4px;
+                border: 1.5px solid #8890a8;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 4px 4px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.4);
+            }
+
+            
+            .pcr-texture {
+                position: absolute;
+                inset: 0;
+                opacity: 0.0;
+            }
+
+           
+            .pcr-lid-bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 28px;
+                background: linear-gradient(180deg, #3048a8 0%, #1830a0 100%);
+                border-radius: 5px 5px 0 0;
+                border-bottom: 2px solid;
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+            }
+
+            .pcr-lid-bar span {
+                color: rgba(255,255,255,0.85);
+                font-size: 9px;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                font-family: 'Segoe UI', sans-serif;
+            }
+
+            .pcr-status-dot {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: #40ff80;
+                margin-left: auto;
+                box-shadow: 0 0 5px #40ff80;
+            }
+
+          
+            .pcr-screen {
+                position: absolute;
+                right: 10px;
+                top: 36px;
+                width: 72px;
+                height: 55px;
+                background: #0a1a08;
+                border-radius: 3px;
+                border: 1.5px solid #304820;
+                padding: 5px;
+                font-family: 'Courier New', monospace;
+                font-size: 8px;
+                color: #40ee60;
+                line-height: 1.55;
+                text-shadow: 0 0 4px #40ee6088;
+            }
+
+            .pcr-screen .label {
+                color: #28a040;
+                font-size: 7px;
+            }
+
+            
+            .pcr-wells {
+                position: absolute;
+                left: 8px;
+                top: 34px;
+                width: 108px;
+                height: 80px;
+                background: #2c3440;
+                border-radius: 3px;
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: repeat(8, 1fr);
+                gap: 1px;
+                padding: 4px;
+            }
+
+            .well {
+                background: #141c28;
+                border-radius: 50%;
+            }
+
+            .well.active {
+                background: #204898;
+            }
+
+            .well.hot {
+                background: #903030;
+            }
+
+          
+            .pcr-bottom {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 28px;
+                background: #1c2030;
+                display: flex;
+                align-items: center;
+                padding: 0 8px;
+                gap: 6px;
+            }
+
+            .pcr-btn {
+                width: 20px;
+                height: 10px;
+                border-radius: 2px;
+                background: #304058;
+                border: 0.5px solid #4060a0;
+                font-size: 5px;
+                color: #a0c0e0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: monospace;
+                cursor: pointer;
+                user-select: none;
+                transition: background 0.15s ease, opacity 0.15s ease;
+            }
+
+            .pcr-btn:hover {
+                background: #3c4c68;
+            }
+
+            .pcr-btn.disabled {
+                opacity: 0.35;
+                cursor: not-allowed;
+            }
+
+            .pcr-btn.disabled:hover {
+                background: #304058;
+            }
+
+            #pcr-run-btn.active-state {
+                background: #2a6840;
+                border-color: #40a868;
+                color: #c0ffd0;
+            }
+
+            .pcr-status-dot.idle { background: #707888; box-shadow: none; }
+            .pcr-status-dot.running { background: #40ee60; box-shadow: 0 0 5px #40ee60; animation: dot-pulse 1s ease-in-out infinite; }
+            .pcr-status-dot.done { background: #4aa8ff; box-shadow: 0 0 5px #4aa8ff; }
+            .pcr-status-dot.locked { background: #903030; box-shadow: none; }
+
+            @keyframes dot-pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.35; }
+            }
+
+            .well.cycling {
+                animation: well-pulse 1.2s ease-in-out infinite;
+            }
+
+            @keyframes well-pulse {
+                0%, 100% { background: #204898; }
+                50% { background: #d04848; }
+            }
+
+            /* ---- PCR parameter menu popup ---- */
+            #pcr-menu-overlay {
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.4);
+                z-index: 2500;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.2s ease;
+            }
+
+            #pcr-menu-overlay.open {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            #pcr-menu-popup {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 320px;
+                max-width: 90vw;
+                background: #15181c;
+                border: 1px solid #2a3038;
+                border-radius: 10px;
+                box-shadow: 0 12px 36px rgba(0,0,0,0.5);
+                z-index: 2600;
+                padding: 20px 22px;
+                font-family: 'Segoe UI', sans-serif;
+                display: none;
+            }
+
+            #pcr-menu-popup.open {
+                display: block;
+            }
+
+            #pcr-menu-popup h2 {
+                color: #4aa8ff;
+                font-size: 16px;
+                margin-bottom: 4px;
+            }
+
+            #pcr-menu-popup .menu-sub {
+                color: #8a93a0;
+                font-size: 11.5px;
+                margin-bottom: 16px;
+            }
+
+            .pcr-param-group {
+                margin-bottom: 12px;
+            }
+
+            .pcr-param-group label {
+                display: block;
+                color: #d0d4da;
+                font-size: 12px;
+                margin-bottom: 4px;
+            }
+
+            .pcr-param-row {
+                display: flex;
+                gap: 8px;
+            }
+
+            .pcr-param-row input {
+                width: 100%;
+                background: #1e2228;
+                border: 1px solid #333a44;
+                color: #f0f2f5;
+                padding: 6px 8px;
+                border-radius: 5px;
+                font-size: 12.5px;
+                box-sizing: border-box;
+                outline: none;
+            }
+
+            .pcr-param-row input:focus {
+                border-color: #4aa8ff;
+            }
+
+            .pcr-param-row .unit {
+                color: #6a7280;
+                font-size: 11px;
+                align-self: center;
+                white-space: nowrap;
+            }
+
+            #pcr-menu-btn-row {
+                display: flex;
+                gap: 10px;
+                margin-top: 16px;
+            }
+
+            #pcr-menu-save, #pcr-menu-cancel {
+                flex: 1;
+                padding: 9px;
+                border: none;
+                border-radius: 6px;
+                font-size: 12.5px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            #pcr-menu-save {
+                background: #4aa8ff;
+                color: #06121e;
+            }
+
+            #pcr-menu-cancel {
+                background: #2a3038;
+                color: #d0d4da;
+            }
+
+            .pcr-brand {
+                position: absolute;
+                bottom: 32px;
+                left: 10px;
+                font-size: 7px;
+                color: #8090b8;
+                font-family: monospace;
+                letter-spacing: 0.3px;
+            }
+
+        
+            .pipette-stand {
+                position: absolute;
+                right: 200px;
+                bottom: 243px;
+                width: 28px;
+                z-index: 8;
+            }
+
+            .stand-body {
+                width: 28px;
+                height: 50px;
+                background: linear-gradient(180deg, #d8d0a8, #b8b088);
+                border-radius: 4px;
+                border: 1px solid #a0986e;
+                position: relative;
+            }
+
+            .stand-top {
+                width: 36px;
+                height: 8px;
+                background: #b8b088;
+                border-radius: 4px;
+                border: 0.5px solid #a09878;
+                margin-left: -4px;
+            }
+
+            .stand-hole {
+                width: 8px;
+                height: 5px;
+                background: #706848;
+                border-radius: 0 0 4px 4px;
+                margin: 5px auto 0;
+            }
+
+            
+            .pipette {
+                position: absolute;
+                bottom: 243px;
+                z-index: 9;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transform-origin: bottom center;
+                cursor: grab;
+                touch-action: none;
+                user-select: none;
+                filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.25));
+                transition: filter 0.15s ease;
+            }
+
+            .pipette.dragging {
+                cursor: grabbing;
+                z-index: 50;
+                filter: drop-shadow(5px 12px 8px rgba(0,0,0,0.4));
+                transition: none;
+            }
+
+            .pip-btn {
+                border-radius: 50%;
+                border: 1px solid rgba(0,0,0,0.2);
+            }
+
+            .pip-plunger {
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                margin-bottom: 1px;
+            }
+
+            .pip-body {
+                border-radius: 6px;
+                position: relative;
+            }
+
+            .pip-dial {
+                position: absolute;
+                left: -3px;
+                right: -3px;
+                height: 10px;
+                border-radius: 3px;
+                top: 22px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 4.5px;
+                font-family: monospace;
+                color: #102080;
+            }
+
+            .pip-ejector {
+                width: calc(100% + 4px);
+                height: 5px;
+                border-radius: 2px;
+                margin-top: 4px;
+            }
+
+            .pip-cone {
+                width: 0;
+                height: 0;
+                margin-top: 1px;
+            }
+
+            .pip-tip {
+                width: 0;
+                height: 0;
+            }
+
+          
+            .p1000 {
+                right: 162px;
+            }
+
+            .p1000 .pip-plunger {
+                background: #a0c0f0;
+                width: 8px;
+                height: 8px;
+            }
+
+            .p1000 .pip-body {
+                width: 12px;
+                height: 65px;
+                background: linear-gradient(180deg,#3060c0,#2050a8);
+            }
+
+            .p1000 .pip-dial {
+                background: #2040a0;
+                color: #d0e8ff;
+                font-size: 4px;
+            }
+
+            .p1000 .pip-ejector {
+                background: #1840a0;
+            }
+
+            .p1000 .pip-cone {
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 26px solid #90a8e0;
+            }
+
+            .p1000 .pip-tip {
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                border-top: 14px solid #b8ccf0;
+            }
+
+          
+            .p200 {
+                right: 140px;
+            }
+
+            .p200 .pip-plunger {
+                background: #b0e080;
+                width: 7px;
+                height: 7px;
+            }
+
+            .p200 .pip-body {
+                width: 11px;
+                height: 58px;
+                background: linear-gradient(180deg,#70c030,#509020);
+            }
+
+            .p200 .pip-dial {
+                background: #3a7018;
+                color: #d8f0c0;
+                font-size: 4px;
+            }
+
+            .p200 .pip-ejector {
+                background: #306010;
+            }
+
+            .p200 .pip-cone {
+                border-left: 4.5px solid transparent;
+                border-right: 4.5px solid transparent;
+                border-top: 22px solid #90d870;
+            }
+
+            .p200 .pip-tip {
+                border-left: 2.5px solid transparent;
+                border-right: 2.5px solid transparent;
+                border-top: 16px solid #e0f0ff;
+            }
+
+           
+            .p10 {
+                right: 120px;
+            }
+
+            .p10 .pip-plunger {
+                background: #f08060;
+                width: 6px;
+                height: 6px;
+            }
+
+            .p10 .pip-body {
+                width: 10px;
+                height: 50px;
+                background: linear-gradient(180deg,#d04020,#a02810);
+            }
+
+            .p10 .pip-dial {
+                background: #901808;
+                color: #ffe0d8;
+                font-size: 4px;
+            }
+
+            .p10 .pip-ejector {
+                background: #801008;
+            }
+
+            .p10 .pip-cone {
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 18px solid #f07060;
+            }
+
+            .p10 .pip-tip {
+                border-left: 2px solid transparent;
+                border-right: 2px solid transparent;
+                border-top: 12px solid #fff0e8;
+            }
+            
+            .label-tag {
+                position: absolute;
+                font-size: 9px;
+                color: #304060;
+                font-style: italic;
+                font-family: 'Segoe UI', sans-serif;
+                white-space: nowrap;
+                z-index: 20;
+            }
+
+            .label-tag::before {
+                content: '';
+                position: absolute;
+                background: #80a0c0;
+            }
+
+            .lab-item {
+                position: absolute;
+                bottom: 243px;
+                z-index: 9;
+                cursor: grab;
+                touch-action: none;
+                user-select: none;
+                filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.25));
+                transition: filter 0.15s ease;
+            }
+
+            .lab-item.dragging {
+                cursor: grabbing;
+                z-index: 50;
+                filter: drop-shadow(5px 12px 8px rgba(0,0,0,0.4));
+                transition: none;
+            }
+
+            /* ---- Centrifuge ---- */
+            .centrifuge {
+                left: 40px;
+                width: 86px;
+                height: 64px;
+            }
+
+            .centrifuge-body {
+                width: 86px;
+                height: 54px;
+                background: linear-gradient(180deg, #e4e8ee, #c4ccd6);
+                border: 1.5px solid #9098a8;
+                border-radius: 10px 10px 6px 6px;
+                position: relative;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 2px 3px 6px rgba(0,0,0,0.2);
+            }
+
+            .centrifuge-lid {
+                position: absolute;
+                top: 6px;
+                left: 8px;
+                right: 8px;
+                height: 30px;
+                border-radius: 50% 50% 10px 10px / 60% 60% 10px 10px;
+                background: linear-gradient(180deg, #d8dee8, #b8c0cc);
+                border: 1px solid #a0a8b8;
+            }
+
+            .centrifuge-lid::after {
+                content: '';
+                position: absolute;
+                top: 6px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background: #8890a0;
+                border: 1px solid #707888;
+            }
+
+            .centrifuge-panel {
+                position: absolute;
+                bottom: 4px;
+                left: 8px;
+                right: 8px;
+                height: 14px;
+                background: #1c2030;
+                border-radius: 3px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 5px;
+            }
+
+            .centrifuge-panel .cf-dot {
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background: #40ee60;
+                box-shadow: 0 0 4px #40ee60;
+            }
+
+            .centrifuge-panel .cf-led {
+                font-family: monospace;
+                font-size: 6px;
+                color: #50e0ff;
+            }
+
+            .centrifuge-feet {
+                position: absolute;
+                bottom: -4px;
+                left: 6px;
+                right: 6px;
+                height: 4px;
+                background: #707888;
+                border-radius: 0 0 4px 4px;
+            }
+
+            /* ---- Pipette tip box ---- */
+            .tipbox {
+                left: 150px;
+                width: 64px;
+                height: 46px;
+            }
+
+            .tipbox-base {
+                width: 64px;
+                height: 36px;
+                background: linear-gradient(180deg, #f0d090, #d8b060);
+                border: 1.5px solid #b08838;
+                border-radius: 4px;
+                position: relative;
+                box-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+            }
+
+            .tipbox-lid {
+                position: absolute;
+                top: -8px;
+                left: -2px;
+                right: -2px;
+                height: 10px;
+                background: linear-gradient(180deg, #fce8b8, #e8c878);
+                border: 1.5px solid #b8a058;
+                border-radius: 4px 4px 0 0;
+            }
+
+            .tipbox-tips {
+                position: absolute;
+                top: 3px;
+                left: 4px;
+                right: 4px;
+                bottom: 4px;
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                gap: 1px;
+            }
+
+            .tipbox-tips div {
+                background: #f8f4e8;
+                border-radius: 0 0 2px 2px;
+                clip-path: polygon(20% 0, 80% 0, 60% 100%, 40% 100%);
+            }
+
+            .loose-tip {
+                left: 226px;
+                width: 8px;
+                height: 22px;
+            }
+
+            .loose-tip-shape {
+                width: 0;
+                height: 0;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 22px solid #f0ece0;
+                filter: brightness(1.05);
+            }
+
+            /* ---- Lab tube---- */
+            .labtube {
+                width: 16px;
+                height: 40px;
+            }
+
+            .labtube.t1 { left: 248px; }
+            .labtube.t2 { left: 268px; }
+            .labtube.t3 { left: 288px; }
+
+            .labtube-cap {
+                width: 16px;
+                height: 7px;
+                border-radius: 3px 3px 0 0;
+                background: #e04848;
+            }
+
+            .labtube.t2 .labtube-cap { background: #4878e0; }
+            .labtube.t3 .labtube-cap { background: #40c060; }
+
+            .labtube-body {
+                width: 14px;
+                height: 30px;
+                margin: 0 auto;
+                background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(220,228,238,0.35));
+                border: 1px solid rgba(140,150,165,0.6);
+                border-radius: 2px 2px 8px 8px;
+                position: relative;
+                backdrop-filter: blur(0.5px);
+            }
+
+            .labtube-liquid {
+                position: absolute;
+                bottom: 2px;
+                left: 1px;
+                right: 1px;
+                height: 14px;
+                border-radius: 0 0 6px 6px;
+            }
+
+            .labtube.t1 .labtube-liquid { background: #e8a0a0; }
+            .labtube.t2 .labtube-liquid { background: #a0c0f0; }
+            .labtube.t3 .labtube-liquid { background: #c8e8b0; }
+
+            /* ---- Microtube holder---- */
+            .tuberack {
+                left: 312px;
+                width: 96px;
+                height: 30px;
+            }
+
+            .tuberack-base {
+                width: 96px;
+                height: 22px;
+                background: linear-gradient(180deg, #404850, #282e36);
+                border-radius: 4px;
+                position: relative;
+                box-shadow: 2px 3px 5px rgba(0,0,0,0.25);
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                gap: 2px;
+                padding: 4px;
+            }
+
+            .tuberack-base div {
+                background: #161a20;
+                border-radius: 50%;
+                border: 1px solid #050608;
+            }
+
+            .reagent-vial {
+                width: 22px;
+                height: 46px;
+            }
+
+            .reagent-vial.dna-vial { left: 420px; }
+            .reagent-vial.taq-vial { left: 448px; }
+            .reagent-vial.dntp-vial { left: 476px; }
+            .reagent-vial.buffer-vial { left: 504px; }
+
+            .vial-cap {
+                width: 24px;
+                height: 9px;
+                margin-left: -1px;
+                border-radius: 2px;
+            }
+
+            .reagent-vial.dna-vial .vial-cap { background: #8050c0; }
+            .reagent-vial.taq-vial .vial-cap { background: #e0a030; }
+            .reagent-vial.dntp-vial .vial-cap { background: #30a0d0; }
+            .reagent-vial.buffer-vial .vial-cap { background: #50b868; }
+
+            .vial-body {
+                width: 22px;
+                height: 36px;
+                background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(225,230,240,0.4));
+                border: 1px solid rgba(130,140,155,0.65);
+                border-radius: 3px 3px 9px 9px;
+                position: relative;
+            }
+
+            .vial-fill {
+                position: absolute;
+                bottom: 2px;
+                left: 2px;
+                right: 2px;
+                border-radius: 0 0 7px 7px;
+            }
+
+            .reagent-vial.dna-vial .vial-fill { height: 20px; background: #b090e0; }
+            .reagent-vial.taq-vial .vial-fill { height: 16px; background: #f0c868; }
+            .reagent-vial.dntp-vial .vial-fill { height: 22px; background: #70c8ec; }
+            .reagent-vial.buffer-vial .vial-fill { height: 18px; background: #90d8a0; }
+
+            .vial-label {
+                position: absolute;
+                top: 14px;
+                left: 1px;
+                right: 1px;
+                height: 14px;
+                background: rgba(255,255,255,0.92);
+                border-top: 1px solid rgba(130,140,155,0.5);
+                border-bottom: 1px solid rgba(130,140,155,0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 4.5px;
+                font-family: 'Segoe UI', sans-serif;
+                font-weight: 700;
+                color: #303840;
+                letter-spacing: 0.2px;
+                text-align: center;
+                line-height: 1;
+            }
+
+            .reagent-vial.fprimer-vial { left: 532px; }
+            .reagent-vial.rprimer-vial { left: 560px; }
+
+            .reagent-vial.fprimer-vial .vial-cap { background: #d04898; }
+            .reagent-vial.rprimer-vial .vial-cap { background: #e07820; }
+            .reagent-vial.fprimer-vial .vial-fill { height: 19px; background: #e890c0; }
+            .reagent-vial.rprimer-vial .vial-fill { height: 19px; background: #f0b070; }
+
+            .reagent-vial.water-vial { left: 588px; }
+            .reagent-vial.water-vial .vial-cap { background: #3098d8; }
+            .reagent-vial.water-vial .vial-fill { height: 24px; background: #80c8f0; }
+
+            /* ---- Cleaning bottles: Ethanol / Bleach / Water + Wipe ---- */
+            .clean-bottle {
+                width: 26px;
+                height: 52px;
+            }
+
+            .clean-bottle.ethanol-bottle { left: 626px; }
+            .clean-bottle.bleach-bottle { left: 656px; }
+            .clean-bottle.cwater-bottle { left: 686px; }
+
+            .clean-bottle-cap {
+                width: 12px;
+                height: 8px;
+                margin: 0 auto;
+                border-radius: 2px 2px 0 0;
+                background: #505860;
+            }
+
+            .clean-bottle-body {
+                width: 26px;
+                height: 42px;
+                border-radius: 4px 4px 7px 7px;
+                border: 1px solid rgba(60,68,80,0.6);
+                position: relative;
+                box-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+            }
+
+            .ethanol-bottle .clean-bottle-body { background: linear-gradient(180deg, #f0e0a0, #d8c068); }
+            .bleach-bottle .clean-bottle-body { background: linear-gradient(180deg, #cfe8e0, #9cc8ba); }
+            .cwater-bottle .clean-bottle-body { background: linear-gradient(180deg, #d8edf8, #a8d4ec); }
+
+            .clean-bottle-label {
+                position: absolute;
+                top: 10px;
+                left: 2px;
+                right: 2px;
+                bottom: 8px;
+                background: rgba(255,255,255,0.92);
+                border-radius: 2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                font-size: 5px;
+                font-weight: 700;
+                font-family: 'Segoe UI', sans-serif;
+                color: #283038;
+                line-height: 1.2;
+                padding: 2px;
+            }
+
+            /* ---- Wipe---- */
+            .wipe-item {
+                left: 716px;
+                width: 34px;
+                height: 26px;
+            }
+
+            .wipe-shape {
+                width: 34px;
+                height: 24px;
+                background: repeating-linear-gradient(45deg, #ffffff, #ffffff 4px, #e4ecf2 4px, #e4ecf2 8px);
+                border: 1px solid #c8d4dc;
+                border-radius: 3px;
+                box-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+                transition: background 0.2s ease, box-shadow 0.2s ease;
+            }
+
+            .wipe-item.zone-hover .wipe-shape {
+                box-shadow: 0 0 0 3px rgba(255,255,255,0.55), 1px 2px 4px rgba(0,0,0,0.2);
+            }
+
+            .bench-top {
+                transition: box-shadow 0.25s ease;
+            }
+
+            .bench-top.zone-hover {
+                box-shadow: 0 0 0 3px rgba(255,255,255,0.5);
+            }
+
+            #contamination-overlay {
+                position: absolute;
+                bottom: 243px;
+                left: 22px;
+                right: 22px;
+                height: 22px;
+                border-radius: 3px;
+                background: repeating-linear-gradient(135deg, rgba(200,60,40,0.55) 0 6px, rgba(160,40,30,0.4) 6px 12px);
+                z-index: 7;
+                pointer-events: none;
+                transition: opacity 0.4s ease;
+                opacity: 1;
+            }
+
+            #contamination-overlay.clean {
+                opacity: 0;
+            }
+
+            .labtube.zone-hover .labtube-body {
+                box-shadow: 0 0 0 3px rgba(255,255,255,0.6);
+            }
+
+            .labtube.contaminated .labtube-body {
+                animation: tube-shake 0.35s ease;
+                box-shadow: 0 0 0 3px rgba(220,60,50,0.85);
+            }
+
+            @keyframes tube-shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-3px); }
+                75% { transform: translateX(3px); }
+            }
+
+            .pcr-machine.zone-hover {
+                box-shadow: 0 0 0 3px rgba(255,255,255,0.55), 4px 4px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.4);
+            }
+
+            @keyframes tube-loaded {
+                0%   { opacity: 1; transform: scale(1) translateY(0); }
+                100% { opacity: 0; transform: scale(0.3) translateY(-20px); }
+            }
+
+            .labtube.loaded-into-machine {
+                animation: tube-loaded 0.35s ease forwards;
+                pointer-events: none;
+            }
+
+            @keyframes tube-returned {
+                0%   { opacity: 0; transform: scale(0.3) translateY(-20px); }
+                60%  { opacity: 1; transform: scale(1.12) translateY(0); }
+                100% { opacity: 1; transform: scale(1) translateY(0); }
+            }
+
+            .labtube.amplified {
+                animation: tube-returned 0.45s ease forwards;
+                pointer-events: auto;
+            }
+
+            .labtube.amplified .labtube-body {
+                box-shadow: 0 0 10px 2px rgba(200, 230, 60, 0.65);
+            }
+
+            .labtube-mix-layer.amplified-fill {
+                background: linear-gradient(180deg, #e8f078, #b8d020) !important;
+                box-shadow: 0 0 8px rgba(216, 240, 90, 0.8) inset;
+            }
+
+            .labtube-mix-layer {
+                position: absolute;
+                left: 1px;
+                right: 1px;
+                bottom: 2px;
+                border-radius: 0 0 6px 6px;
+                transition: height 0.3s ease;
+                height: 0;
+            }
+
+            #sim-toast {
+                position: fixed;
+                bottom: 28px;
+                left: 50%;
+                transform: translateX(-50%) translateY(20px);
+                background: #15181c;
+                border: 1px solid #2a3038;
+                color: #f0f2f5;
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-family: 'Segoe UI', sans-serif;
+                font-size: 13px;
+                z-index: 3000;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.25s ease, transform 0.25s ease;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+            }
+
+            #sim-toast.show {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+
+            #sim-toast.ok { border-color: #40ee60; color: #b0ffc0; }
+            #sim-toast.err { border-color: #ff6868; color: #ffb0b0; }
+            #sim-toast.info { border-color: #4aa8ff; color: #c8e0ff; }
+
+            /* ---- Simulation step indicator---- */
+            .protocol-step.sim-current .step-num {
+                background: #4aa8ff;
+                color: #06121e;
+                box-shadow: 0 0 8px rgba(74,168,255,0.7);
+            }
+
+            .protocol-step.sim-done .step-num {
+                background: #40ee60;
+                border-color: #40ee60;
+                color: #06121e;
+            }
+
+            .protocol-step.sim-done .step-text {
+                color: #7a8a7a;
+                text-decoration: line-through;
+            }
+
+            /* ---------- PCR Master Mix Calculator Panel ---------- */
+            #calc-overlay {
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.35);
+                z-index: 1500;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.25s ease;
+            }
+
+            #calc-overlay.open {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            #calc-panel {
+                position: fixed;
+                top: 0;
+                left: -380px;
+                width: 340px;
+                max-width: 90vw;
+                height: 100vh;
+                background: #15181c;
+                border-right: 1px solid #2a3038;
+                box-shadow: 6px 0 24px rgba(0,0,0,0.45);
+                z-index: 1600;
+                transition: left 0.3s ease;
+                overflow-y: auto;
+                padding: 24px 22px 30px;
+                font-family: 'Segoe UI', sans-serif;
+                box-sizing: border-box;
+            }
+
+            #calc-panel.open {
+                left: 0;
+            }
+
+            #calc-panel h2 {
+                color: #4aa8ff;
+                font-size: 18px;
+                margin-bottom: 4px;
+            }
+
+            #calc-panel .calc-sub {
+                color: #8a93a0;
+                font-size: 12px;
+                margin-bottom: 18px;
+            }
+
+            #calc-panel label {
+                display: block;
+                color: #d0d4da;
+                font-size: 12.5px;
+                margin: 10px 0 4px;
+            }
+
+            #calc-panel input[type="number"] {
+                width: 100%;
+                background: #1e2228;
+                border: 1px solid #333a44;
+                color: #f0f2f5;
+                padding: 8px 10px;
+                border-radius: 5px;
+                font-size: 13px;
+                box-sizing: border-box;
+                outline: none;
+            }
+
+            #calc-panel input[type="number"]:focus {
+                border-color: #4aa8ff;
+            }
+
+            #calc-panel .calc-row {
+                display: flex;
+                gap: 10px;
+            }
+
+            #calc-panel .calc-row > div {
+                flex: 1;
+            }
+
+            #calc-btn-row {
+                display: flex;
+                gap: 10px;
+                margin-top: 18px;
+            }
+
+            #calc-run, #calc-reset {
+                flex: 1;
+                padding: 10px;
+                border: none;
+                border-radius: 6px;
+                font-size: 13px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: opacity 0.15s ease;
+            }
+
+            #calc-run {
+                background: #4aa8ff;
+                color: #06121e;
+            }
+
+            #calc-reset {
+                background: #2a3038;
+                color: #d0d4da;
+            }
+
+            #calc-run:hover, #calc-reset:hover {
+                opacity: 0.85;
+            }
+
+            #calc-results {
+                margin-top: 20px;
+                padding-top: 16px;
+                border-top: 1px solid #2a3038;
+                display: none;
+            }
+
+            #calc-results.show {
+                display: block;
+            }
+
+            #calc-results h3 {
+                color: #f0f2f5;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            .calc-result-row {
+                display: flex;
+                justify-content: space-between;
+                padding: 6px 0;
+                font-size: 13px;
+                color: #c8ccd2;
+                border-bottom: 1px dashed #262b32;
+            }
+
+            .calc-result-row span:last-child {
+                color: #40ee60;
+                font-family: 'Courier New', monospace;
+            }
+
+            #calc-error {
+                margin-top: 14px;
+                color: #ff6868;
+                font-size: 12px;
+                display: none;
+            }
+
+            #calc-close {
+                position: absolute;
+                top: 18px;
+                right: 18px;
+                color: #8a93a0;
+                font-size: 18px;
+                cursor: pointer;
+                background: none;
+                border: none;
+            }
+
+            #calc-close:hover {
+                color: #ffffff;
+            }
+
+            /* ---------- PCR Step-by-Step Protocol Panel ---------- */
+            #protocol-panel {
+                position: fixed;
+                top: 70px;
+                right: 0;
+                width: 280px;
+                max-width: 85vw;
+                height: calc(100vh - 70px);
+                background: rgba(15, 18, 22, 0.94);
+                border-left: 1px solid #2a3038;
+                box-shadow: -4px 0 18px rgba(0,0,0,0.4);
+                z-index: 200;
+                transform: translateX(0);
+                transition: transform 0.3s ease;
+                font-family: 'Segoe UI', sans-serif;
+                display: flex;
+                flex-direction: column;
+            }
+
+            #protocol-panel.collapsed {
+                transform: translateX(263px);
+            }
+
+            #protocol-handle {
+                position: absolute;
+                top: 50%;
+                left: -28px;
+                transform: translateY(-50%);
+                width: 28px;
+                height: 64px;
+                background: rgba(15, 18, 22, 0.94);
+                border: 1px solid #2a3038;
+                border-right: none;
+                border-radius: 8px 0 0 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                color: #4aa8ff;
+                font-size: 13px;
+            }
+
+            #protocol-header {
+                padding: 16px 18px 12px;
+                border-bottom: 1px solid #262b32;
+                flex-shrink: 0;
+            }
+
+            #protocol-header h2 {
+                color: #4aa8ff;
+                font-size: 15px;
+                margin-bottom: 3px;
+            }
+
+            #protocol-header .protocol-sub {
+                color: #8a93a0;
+                font-size: 11px;
+            }
+
+            #protocol-body {
+                flex: 1;
+                overflow-y: auto;
+                padding: 14px 18px 24px;
+            }
+
+            #protocol-body::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            #protocol-body::-webkit-scrollbar-thumb {
+                background: #2a3038;
+                border-radius: 3px;
+            }
+
+            .protocol-step {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 14px;
+            }
+
+            .protocol-step .step-num {
+                flex-shrink: 0;
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background: #1e2228;
+                border: 1px solid #4aa8ff;
+                color: #4aa8ff;
+                font-size: 11px;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .protocol-step .step-text {
+                color: #d0d4da;
+                font-size: 12.5px;
+                line-height: 1.45;
+            }
+
+            .protocol-step .step-text b {
+                color: #f0f2f5;
+            }
+
+            .protocol-note {
+                background: rgba(74, 168, 255, 0.08);
+                border-left: 2px solid #4aa8ff;
+                padding: 8px 10px;
+                margin: 6px 0 14px 32px;
+                font-size: 11.5px;
+                color: #9ab8d8;
+                border-radius: 0 4px 4px 0;
+            }
+
+            .protocol-params {
+                margin: 6px 0 14px 32px;
+                font-size: 11.5px;
+                color: #c8ccd2;
+                font-family: 'Courier New', monospace;
+                background: #1a1e24;
+                border-radius: 5px;
+                padding: 8px 10px;
+                line-height: 1.6;
+            }
+
+            .protocol-params .p-label {
+                color: #40ee60;
+            }
+
+            #protocol-table {
+                margin-top: 18px;
+                border-top: 1px solid #262b32;
+                padding-top: 14px;
+            }
+
+            #protocol-table h3 {
+                color: #f0f2f5;
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+
+            .reagent-table-row {
+                display: flex;
+                justify-content: space-between;
+                font-size: 12px;
+                color: #c8ccd2;
+                padding: 5px 0;
+                border-bottom: 1px dashed #262b32;
+            }
+
+            .reagent-table-row span:last-child {
+                color: #40ee60;
+                font-family: 'Courier New', monospace;
+            }
+
+            .decon-bin {
+                left: 118px;
+                bottom: 0;
+                width: 58px;
+                height: 54px;
+            }
+
+            .decon-bin-body {
+                width: 52px;
+                height: 44px;
+                background: linear-gradient(180deg, #d83838, #a82828);
+                border-radius: 4px 4px 8px 8px;
+                border: 1.5px solid #802020;
+                position: relative;
+                box-shadow: 2px 3px 5px rgba(0,0,0,0.25);
+            }
+
+            .decon-bin-lid {
+                position: absolute;
+                top: -7px;
+                left: -3px;
+                right: -3px;
+                height: 9px;
+                background: #c03030;
+                border: 1.5px solid #802020;
+                border-radius: 4px;
+            }
+
+            .decon-bin-symbol {
+                position: absolute;
+                top: 14px;
+                left: 0;
+                right: 0;
+                text-align: center;
+                font-size: 18px;
+                line-height: 1;
+            }
+
+            .decon-bin-label {
+                position: absolute;
+                bottom: -16px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 8px;
+                color: #d0d4da;
+                white-space: nowrap;
+                font-family: 'Segoe UI', sans-serif;
+            }
+
+            .decon-bin.bin-hover .decon-bin-body {
+                box-shadow: 0 0 0 3px rgba(255,255,255,0.35), 2px 3px 5px rgba(0,0,0,0.25);
+            }
+
+            #lab-fridge {
+                position: absolute;
+                bottom: 0;
+                left: 28px;
+                width: 80px;
+                height: 145px;
+                z-index: 6;
+                cursor: pointer;
+            }
+
+            .fridge-body {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(170deg, #dce4ec, #c0cad6);
+                border: 1.5px solid #8898a8;
+                border-radius: 5px 5px 3px 3px;
+                box-shadow: 3px 4px 10px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.5);
+            }
+
+            .fridge-freezer {
+                position: absolute;
+                top: 4px;
+                left: 4px;
+                right: 4px;
+                height: 36px;
+                background: linear-gradient(180deg, #b8c8d8, #a0b4c4);
+                border: 1px solid #88a0b0;
+                border-radius: 3px;
+            }
+
+            .fridge-freezer-handle {
+                position: absolute;
+                right: 6px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 5px;
+                height: 16px;
+                background: #687888;
+                border-radius: 2px;
+            }
+
+            .fridge-door-wrap {
+                position: absolute;
+                top: 44px;
+                left: 4px;
+                right: 4px;
+                bottom: 4px;
+                perspective: 300px;
+                z-index: 8;
+            }
+
+            .fridge-door {
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(170deg, #dce4ec, #c8d4e0);
+                border: 1px solid #8898a8;
+                border-radius: 2px;
+                transform-origin: left center;
+                transform: rotateY(0deg);
+                transition: transform 0.45s ease;
+                backface-visibility: hidden;
+                position: relative;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+            }
+
+            .fridge-door.open {
+                transform: rotateY(-75deg);
+            }
+
+            .fridge-door-handle {
+                position: absolute;
+                right: 7px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 5px;
+                height: 24px;
+                background: #687888;
+                border-radius: 2px;
+            }
+
+            .fridge-door-seal {
+                position: absolute;
+                inset: 3px;
+                border: 1px solid rgba(100,120,140,0.4);
+                border-radius: 2px;
+            }
+
+            .fridge-interior {
+                position: absolute;
+                top: 44px;
+                left: 4px;
+                right: 4px;
+                bottom: 4px;
+                background: linear-gradient(180deg, #f0f4f8, #e0e8f0);
+                border-radius: 2px;
+                z-index: 7;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                padding-bottom: 6px;
+                overflow: hidden;
+            }
+
+            .fridge-shelf {
+                position: absolute;
+                left: 4px;
+                right: 4px;
+                height: 2px;
+                background: rgba(100,120,140,0.35);
+                border-radius: 1px;
+            }
+
+            .fridge-shelf.s1 { top: 28%; }
+            .fridge-shelf.s2 { top: 58%; }
+
+            .fridge-light {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 5px;
+                background: rgba(220,240,255,0.8);
+                border-radius: 2px 2px 0 0;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            #lab-fridge.door-open .fridge-light {
+                opacity: 1;
+            }
+
+            .fridge-stored-tube {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 2px;
+                cursor: pointer;
+            }
+
+            .fridge-stored-tube.visible {
+                display: flex;
+            }
+
+            .fridge-stored-tube .fs-cap {
+                width: 10px;
+                height: 5px;
+                background: #e04848;
+                border-radius: 2px 2px 0 0;
+            }
+
+            .fridge-stored-tube .fs-body {
+                width: 9px;
+                height: 18px;
+                background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(220,228,238,0.3));
+                border: 1px solid rgba(140,150,165,0.5);
+                border-radius: 1px 1px 5px 5px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .fridge-stored-tube .fs-fill {
+                position: absolute;
+                bottom: 1px;
+                left: 1px;
+                right: 1px;
+                height: 12px;
+                border-radius: 0 0 4px 4px;
+                background: linear-gradient(180deg, #e8f078, #b8d020);
+                box-shadow: 0 0 5px rgba(200,230,60,0.7) inset;
+            }
+
+            #lab-fridge.zone-hover .fridge-body {
+                box-shadow: 0 0 0 3px rgba(255,255,255,0.5), 3px 4px 10px rgba(0,0,0,0.3);
+            }
+
+            .fridge-label {
+                position: absolute;
+                bottom: -16px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 8px;
+                color: #d0d4da;
+                white-space: nowrap;
+                font-family: 'Segoe UI', sans-serif;
+            }
+
+            @keyframes tube-into-fridge {
+                0%   { opacity: 1; transform: scale(1); }
+                100% { opacity: 0; transform: scale(0.4) translateY(8px); }
+            }
+
+            .labtube.into-fridge {
+                animation: tube-into-fridge 0.3s ease forwards;
+                pointer-events: none;
+            }
+
+            @keyframes tip-eject {
+                0%   { opacity: 1; transform: scale(1); }
+                60%  { opacity: 0; transform: scale(0.4) translateY(6px); }
+                100% { opacity: 0; }
+            }
+
+            @keyframes tip-fresh {
+                0%   { opacity: 0; transform: scale(0.4); }
+                100% { opacity: 1; transform: scale(1); }
+            }
+
+            .pip-tip.ejecting {
+                animation: tip-eject 0.25s ease forwards;
+            }
+
+            .pip-tip.fresh-tip {
+                animation: tip-fresh 0.25s ease forwards;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="scene">
+            
+            <div class="wall"></div>
+          
+            <div class="ceiling">
+                <div class="light-fixture">
+                    <div class="light-tube"></div>
+                </div>
+            </div>
+            <div class="light-glow"></div>
+         
+            <div class="window">
+                <div class="cloud c1"></div>
+                <div class="cloud c2"></div>
+                <div class="cloud c3"></div>
+                <div class="plant-pot">
+                    <div class="plant-leaves">
+                        <div class="leaf"></div>
+                        <div class="leaf"></div>
+                        <div class="leaf"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="window-sill"></div>
+
+         
+            <div class="cabinet">
+                <div class="cab-door">
+                 
+                </div>
+                <div class="cab-door">
+                    
+                </div>
+                <div class="cab-door">
+                   
+                </div>
+                <div class="cab-door">
+                   
+                </div>
+            </div>
+           
+            <div class="floor"></div>
+   
+            <div class="bench-body">
+                <div class="bench-door"></div>
+                <div class="bench-door"></div>
+                <div class="bench-door"></div>
+                <div class="bench-door"></div>
+                <div class="bench-door"></div>
+                <div class="bench-door"></div>
+                <div class="bench-door"></div>
+                <div class="bench-door"></div>
+            </div>
+      
+            <div class="bench-top"></div>
+      
+            <div class="pcr-wrap">
+                <div class="pcr-machine" id="pcr-machine">
+                    <div class="pcr-texture"></div>
+                    <div class="pcr-lid-bar">
+                        <span>Applied Biosystems Veriti™</span>
+                        <div class="pcr-status-dot idle" id="pcr-status-dot"></div>
+                    </div>
+                    <div class="pcr-wells" id="wells"></div>
+                    <div class="pcr-screen">
+                        <div class="label">TEMP</div>
+                        <div id="pcr-temp">--.-°C</div>
+                        <div class="label">CYCLE</div>
+                        <div id="pcr-cycle">-- / --</div>
+                        <div class="label">TIME</div>
+                        <div id="pcr-time">--:--</div>
+                    </div>
+                    <div class="pcr-brand">Veriti 96-Well</div>
+                    <div class="pcr-bottom">
+                        <div class="pcr-btn" id="pcr-run-btn">RUN</div>
+                        <div class="pcr-btn" id="pcr-stop-btn">STOP</div>
+                        <div class="pcr-btn" id="pcr-menu-btn">MENU</div>
+                    </div>
+                </div>
+            </div>
+     
+            <div class="pipette-stand">
+                <div class="stand-top"></div>
+                <div class="stand-body">
+                    <div class="stand-hole"></div>
+                    <div class="stand-hole"></div>
+                    <div class="stand-hole"></div>
+                </div>
+            </div>
+     
+            <div class="pipette p1000">
+                <div class="pip-plunger"></div>
+                <div class="pip-body">
+                    <div class="pip-dial">1000</div>
+                    <div class="pip-ejector"></div>
+                </div>
+                <div class="pip-cone"></div>
+                <div class="pip-tip"></div>
+            </div>
+           
+            <div class="pipette p200">
+                <div class="pip-plunger"></div>
+                <div class="pip-body">
+                    <div class="pip-dial">200</div>
+                    <div class="pip-ejector"></div>
+                </div>
+                <div class="pip-cone"></div>
+                <div class="pip-tip"></div>
+            </div>
+         
+            <div class="pipette p10">
+                <div class="pip-plunger"></div>
+                <div class="pip-body">
+                    <div class="pip-dial">10</div>
+                    <div class="pip-ejector"></div>
+                </div>
+                <div class="pip-cone"></div>
+                <div class="pip-tip"></div>
+            </div>     
+
+
+            <!-- Centrifuge -->
+            <div class="lab-item centrifuge">
+                <div class="centrifuge-body">
+                    <div class="centrifuge-lid"></div>
+                    <div class="centrifuge-panel">
+                        <div class="cf-dot"></div>
+                        <div class="cf-led">RUN</div>
+                    </div>
+                </div>
+                <div class="centrifuge-feet"></div>
+            </div>
+
+            <!-- Pipette tip box -->
+            <div class="lab-item tipbox">
+                <div class="tipbox-lid"></div>
+                <div class="tipbox-base">
+                    <div class="tipbox-tips">
+                        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loose pipette tip -->
+            <div class="lab-item loose-tip">
+                <div class="loose-tip-shape"></div>
+            </div>
+
+            <!-- Lab tubes-->
+            <div class="lab-item labtube t1" id="mastermix-tube">
+                <div class="labtube-cap"></div>
+                <div class="labtube-body">
+                    <div class="labtube-liquid" style="display:none;"></div>
+                    <div class="labtube-mix-layer" id="mastermix-fill"></div>
+                </div>
+            </div>
+            <div class="lab-item labtube t2">
+                <div class="labtube-cap"></div>
+                <div class="labtube-body"><div class="labtube-liquid"></div></div>
+            </div>
+            <div class="lab-item labtube t3">
+                <div class="labtube-cap"></div>
+                <div class="labtube-body"><div class="labtube-liquid"></div></div>
+            </div>
+
+            <!-- Microtube holder -->
+            <div class="lab-item tuberack">
+                <div class="tuberack-base">
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                </div>
+            </div>
+
+            <!-- Reagent vials-->
+            <div class="lab-item reagent-vial dna-vial" data-role="dna">
+                <div class="vial-cap"></div>
+                <div class="vial-body">
+                    <div class="vial-fill"></div>
+                    <div class="vial-label">DNA</div>
+                </div>
+            </div>
+            <div class="lab-item reagent-vial taq-vial" data-role="taq">
+                <div class="vial-cap"></div>
+                <div class="vial-body">
+                    <div class="vial-fill"></div>
+                    <div class="vial-label">Taq Poly</div>
+                </div>
+            </div>
+            <div class="lab-item reagent-vial dntp-vial" data-role="dntps">
+                <div class="vial-cap"></div>
+                <div class="vial-body">
+                    <div class="vial-fill"></div>
+                    <div class="vial-label">dNTPs</div>
+                </div>
+            </div>
+            <div class="lab-item reagent-vial buffer-vial" data-role="buffer">
+                <div class="vial-cap"></div>
+                <div class="vial-body">
+                    <div class="vial-fill"></div>
+                    <div class="vial-label">PCR Buf</div>
+                </div>
+            </div>
+
+            <!-- Forward / Reverse primer vials-->
+            <div class="lab-item reagent-vial fprimer-vial" data-role="fprimer">
+                <div class="vial-cap"></div>
+                <div class="vial-body">
+                    <div class="vial-fill"></div>
+                    <div class="vial-label">Fwd Primer</div>
+                </div>
+            </div>
+            <div class="lab-item reagent-vial rprimer-vial" data-role="rprimer">
+                <div class="vial-cap"></div>
+                <div class="vial-body">
+                    <div class="vial-fill"></div>
+                    <div class="vial-label">Rev Primer</div>
+                </div>
+            </div>
+
+            <!-- Water vial-->
+            <div class="lab-item reagent-vial water-vial" data-role="water">
+                <div class="vial-cap"></div>
+                <div class="vial-body">
+                    <div class="vial-fill"></div>
+                    <div class="vial-label">Water</div>
+                </div>
+            </div>
+
+            <!-- Cleaning bottles-->
+            <div class="lab-item clean-bottle ethanol-bottle" data-role="ethanol">
+                <div class="clean-bottle-cap"></div>
+                <div class="clean-bottle-body">
+                    <div class="clean-bottle-label">70%<br>Ethanol</div>
+                </div>
+            </div>
+            <div class="lab-item clean-bottle bleach-bottle" data-role="bleach">
+                <div class="clean-bottle-cap"></div>
+                <div class="clean-bottle-body">
+                    <div class="clean-bottle-label">10%<br>Bleach</div>
+                </div>
+            </div>
+            <div class="lab-item clean-bottle cwater-bottle" data-role="cwater">
+                <div class="clean-bottle-cap"></div>
+                <div class="clean-bottle-body">
+                    <div class="clean-bottle-label">Water</div>
+                </div>
+            </div>
+
+            <!-- Wipe -->
+            <div class="lab-item wipe-item" data-role="wipe">
+                <div class="wipe-shape"></div>
+            </div>
+
+            <!-- Decontamination bin-->
+            <div class="lab-item decon-bin" id="decon-bin">
+                <div class="decon-bin-lid"></div>
+                <div class="decon-bin-body">
+                    <div class="decon-bin-symbol">🗑️</div>
+                </div>
+                <div class="decon-bin-label">Tip waste</div>
+            </div>
+
+            <div id="contamination-overlay"></div>
+
+            <!--Lab Fridge-->
+            <div id="lab-fridge">
+                <div class="fridge-body"></div>
+                <!-- Interior-->
+                <div class="fridge-interior">
+                    <div class="fridge-light"></div>
+                    <div class="fridge-shelf s1"></div>
+                    <div class="fridge-shelf s2"></div>
+                    <!-- Stored DNA tube-->
+                    <div class="fridge-stored-tube" id="fridge-stored-tube" title="Amplified DNA — 4°C">
+                        <div class="fs-cap"></div>
+                        <div class="fs-body"><div class="fs-fill"></div></div>
+                    </div>
+                </div>
+                <!-- Freezer -->
+                <div class="fridge-freezer">
+                    <div class="fridge-freezer-handle"></div>
+                </div>
+                <!-- Door-->
+                <div class="fridge-door-wrap">
+                    <div class="fridge-door" id="fridge-door">
+                        <div class="fridge-door-seal"></div>
+                        <div class="fridge-door-handle"></div>
+                    </div>
+                </div>
+                <div class="fridge-label">4°C</div>
+            </div>
+        </div>
+
+        <!-- ---------- PCR Master Mix Calculator---------- -->
+        <div id="calc-overlay"></div>
+        <div id="calc-panel">
+            <button id="calc-close" aria-label="Close calculator">&#10005;</button>
+            <h2>Master Mix Calculator</h2>
+            <div class="calc-sub">Per-sample volumes (µL) &middot; auto-includes 10% overage</div>
+
+            <label for="calc-samples">Number of samples</label>
+            <input type="number" id="calc-samples" min="1" step="1" placeholder="e.g. 8">
+
+            <div class="calc-row">
+                <div>
+                    <label for="calc-dna">Template DNA</label>
+                    <input type="number" id="calc-dna" min="0" step="0.01" placeholder="0.00">
+                </div>
+                <div>
+                    <label for="calc-poly">DNA Polymerase</label>
+                    <input type="number" id="calc-poly" min="0" step="0.01" placeholder="0.00">
+                </div>
+            </div>
+
+            <div class="calc-row">
+                <div>
+                    <label for="calc-fprimer">Forward Primer</label>
+                    <input type="number" id="calc-fprimer" min="0" step="0.01" placeholder="0.00">
+                </div>
+                <div>
+                    <label for="calc-rprimer">Reverse Primer</label>
+                    <input type="number" id="calc-rprimer" min="0" step="0.01" placeholder="0.00">
+                </div>
+            </div>
+
+            <div class="calc-row">
+                <div>
+                    <label for="calc-dntps">dNTPs</label>
+                    <input type="number" id="calc-dntps" min="0" step="0.01" placeholder="0.00">
+                </div>
+                <div>
+                    <label for="calc-buffer">PCR Buffer</label>
+                    <input type="number" id="calc-buffer" min="0" step="0.01" placeholder="0.00">
+                </div>
+            </div>
+
+            <label for="calc-water">Water</label>
+            <input type="number" id="calc-water" min="0" step="0.01" placeholder="0.00">
+
+            <div id="calc-btn-row">
+                <button id="calc-run">Calculate</button>
+                <button id="calc-reset">Reset</button>
+            </div>
+
+            <div id="calc-error"></div>
+
+            <div id="calc-results">
+                <h3 id="calc-results-title">Final Master Mix Recipe</h3>
+                <div class="calc-result-row"><span>Template DNA</span><span id="r-dna">-</span></div>
+                <div class="calc-result-row"><span>DNA Polymerase</span><span id="r-poly">-</span></div>
+                <div class="calc-result-row"><span>Forward Primer</span><span id="r-fprimer">-</span></div>
+                <div class="calc-result-row"><span>Reverse Primer</span><span id="r-rprimer">-</span></div>
+                <div class="calc-result-row"><span>dNTPs</span><span id="r-dntps">-</span></div>
+                <div class="calc-result-row"><span>PCR Buffer</span><span id="r-buffer">-</span></div>
+                <div class="calc-result-row"><span>Water</span><span id="r-water">-</span></div>
+            </div>
+        </div>
+
+        <!-- ---------- PCR Step-by-Step Protocol Panel---------- -->
+        <div id="protocol-panel">
+            <div id="protocol-handle" title="Toggle protocol panel">&#10094;</div>
+            <div id="protocol-header">
+                <h2>PCR Step by Step</h2>
+                <div class="protocol-sub">Pour a chemical onto the wipe, then wipe the counter</div>
+            </div>
+            <div id="protocol-body">
+                <div class="protocol-step" id="step-clean">
+                    <div class="step-num">1</div>
+                    <div class="step-text">Clean the countertop with <b>70% ethanol</b>, <b>10% bleach</b>, then <b>water</b> &mdash; in this exact order. Wipe the counter with a clean wipe between each chemical.</div>
+                </div>
+
+                <div class="protocol-step" id="step-mastermix">
+                    <div class="step-num">2</div>
+                    <div class="step-text">In a sterile tube, use your pipette to add reagents in this order: <b>Water &rarr; Buffer &rarr; dNTPs &rarr; Forward &amp; Reverse Primers &rarr; Taq DNA Polymerase</b>.</div>
+                </div>
+                <div class="protocol-note">Vortex the buffer before adding it.</div>
+
+                <div class="protocol-step" id="step-vortex">
+                    <div class="step-num">3</div>
+                    <div class="step-text">Once you have the master mix, <b>vortex it</b>.</div>
+                </div>
+
+                <div class="protocol-step" id="step-pcr-setup">
+                    <div class="step-num">4</div>
+                    <div class="step-text">Set parameters on your PCR machine:</div>
+                </div>
+                <div class="protocol-params">
+<span class="p-label">Denaturation:</span> 30s @ 94&ndash;95&deg;C
+<span class="p-label">Annealing:</span> 30s @ 50&ndash;65&deg;C (depends on primer Tm)
+<span class="p-label">Extension:</span> 1 min @ 72&deg;C
+<span class="p-label">Cycles:</span> repeat 25&ndash;35x
+                </div>
+
+                <div class="protocol-step" id="step-pcr-run">
+                    <div class="step-num">5</div>
+                    <div class="step-text">Put your mixture in the PCR machine, close it, start it, and wait.</div>
+                </div>
+
+                <div id="protocol-table">
+                    <h3>Reagent Volumes (per sample)</h3>
+                    <div class="reagent-table-row"><span>Template DNA</span><span>2 µL</span></div>
+                    <div class="reagent-table-row"><span>10X PCR Buffer</span><span>2 µL</span></div>
+                    <div class="reagent-table-row"><span>dNTPs</span><span>0.4 µL</span></div>
+                    <div class="reagent-table-row"><span>Forward Primer</span><span>0.8 µL</span></div>
+                    <div class="reagent-table-row"><span>Reverse Primer</span><span>0.8 µL</span></div>
+                    <div class="reagent-table-row"><span>DNA Polymerase</span><span>1 µL</span></div>
+                    <div class="reagent-table-row"><span>Nuclease-Free Water</span><span>20 µL</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sim-toast"></div>
+
+        <!-- ---------- PCR machine parameter menu ---------- -->
+        <div id="pcr-menu-overlay"></div>
+        <div id="pcr-menu-popup">
+            <h2>PCR Parameters</h2>
+            <div class="menu-sub">Set your cycling conditions, then Save and hit RUN.</div>
+
+            <div class="pcr-param-group">
+                <label>Denaturation</label>
+                <div class="pcr-param-row">
+                    <input type="number" id="pcr-denat-temp" value="95" step="0.5">
+                    <span class="unit">°C</span>
+                    <input type="number" id="pcr-denat-time" value="30" step="5">
+                    <span class="unit">sec</span>
+                </div>
+            </div>
+
+            <div class="pcr-param-group">
+                <label>Annealing</label>
+                <div class="pcr-param-row">
+                    <input type="number" id="pcr-anneal-temp" value="58" step="0.5">
+                    <span class="unit">°C</span>
+                    <input type="number" id="pcr-anneal-time" value="30" step="5">
+                    <span class="unit">sec</span>
+                </div>
+            </div>
+
+            <div class="pcr-param-group">
+                <label>Extension</label>
+                <div class="pcr-param-row">
+                    <input type="number" id="pcr-extend-temp" value="72" step="0.5">
+                    <span class="unit">°C</span>
+                    <input type="number" id="pcr-extend-time" value="60" step="5">
+                    <span class="unit">sec</span>
+                </div>
+            </div>
+
+            <div class="pcr-param-group">
+                <label>Number of cycles</label>
+                <div class="pcr-param-row">
+                    <input type="number" id="pcr-cycles" value="30" step="1" min="1" max="50">
+                    <span class="unit">cycles (25&ndash;35 typical)</span>
+                </div>
+            </div>
+
+            <div id="pcr-menu-btn-row">
+                <button id="pcr-menu-save">Save</button>
+                <button id="pcr-menu-cancel">Cancel</button>
+            </div>
+        </div>
+
+        <script>
+            const wellsEl = document.getElementById('wells');
+            const activeWells = new Set([24, 25, 34, 35, 36, 37, 38, 46, 47, 48, 49, 50, 58, 59, 60, 61, 62, 63, 70, 71, 72]);
+            for (let i = 0; i < 96; i++) {
+                const w = document.createElement('div');
+                w.className = 'well' + (activeWells.has(i) ? ' active' : '');
+                wellsEl.appendChild(w);
+            }
+        </script>
+  
+
+<script>
+    const mobileIcon = document.getElementById('bar');
+    const navbar = document.getElementById('navbar');
+    const closeIcon = document.getElementById('close');
+    if (mobileIcon) {
+        mobileIcon.addEventListener('click', () => navbar.classList.add('active'));
+    }
+    if (closeIcon) {
+        closeIcon.addEventListener('click', (e) => {
+            e.preventDefault();
+            navbar.classList.remove('active');
+        });
+    }
+</script>
+
+<!-- ---------- PCR Master Mix Calculator logic ---------- -->
+<script>
+    (function () {
+        const toggleBtn = document.getElementById('calc-toggle');
+        const overlay = document.getElementById('calc-overlay');
+        const panel = document.getElementById('calc-panel');
+        const closeBtn = document.getElementById('calc-close');
+        const runBtn = document.getElementById('calc-run');
+        const resetBtn = document.getElementById('calc-reset');
+        const errorBox = document.getElementById('calc-error');
+        const resultsBox = document.getElementById('calc-results');
+        const resultsTitle = document.getElementById('calc-results-title');
+
+        function openCalc() {
+            panel.classList.add('open');
+            overlay.classList.add('open');
+        }
+
+        function closeCalc() {
+            panel.classList.remove('open');
+            overlay.classList.remove('open');
+        }
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (panel.classList.contains('open')) {
+                    closeCalc();
+                } else {
+                    openCalc();
+                }
+            });
+        }
+
+        if (closeBtn) closeBtn.addEventListener('click', closeCalc);
+        if (overlay) overlay.addEventListener('click', closeCalc);
+
+        function getValue(id) {
+            const el = document.getElementById(id);
+            return parseFloat(el.value);
+        }
+
+        function showError(msg) {
+            errorBox.textContent = msg;
+            errorBox.style.display = 'block';
+            resultsBox.classList.remove('show');
+        }
+
+        function clearError() {
+            errorBox.style.display = 'none';
+            errorBox.textContent = '';
+        }
+
+        function calculate() {
+            clearError();
+
+            const samples = parseInt(document.getElementById('calc-samples').value, 10);
+            const fields = {
+                dna: getValue('calc-dna'),
+                poly: getValue('calc-poly'),
+                fprimer: getValue('calc-fprimer'),
+                rprimer: getValue('calc-rprimer'),
+                dntps: getValue('calc-dntps'),
+                buffer: getValue('calc-buffer'),
+                water: getValue('calc-water')
+            };
+
+            if (!samples || samples <= 0 || isNaN(samples)) {
+                showError('Please enter a valid number of samples (1 or more).');
+                return;
+            }
+
+            for (const key in fields) {
+                if (isNaN(fields[key]) || fields[key] < 0) {
+                    showError('Please fill in all reagent volumes with valid, non-negative numbers.');
+                    return;
+                }
+            }
+
+            const multiplier = samples * 1.1;
+
+            document.getElementById('r-dna').textContent = (fields.dna * multiplier).toFixed(2) + ' µL';
+            document.getElementById('r-poly').textContent = (fields.poly * multiplier).toFixed(2) + ' µL';
+            document.getElementById('r-fprimer').textContent = (fields.fprimer * multiplier).toFixed(2) + ' µL';
+            document.getElementById('r-rprimer').textContent = (fields.rprimer * multiplier).toFixed(2) + ' µL';
+            document.getElementById('r-dntps').textContent = (fields.dntps * multiplier).toFixed(2) + ' µL';
+            document.getElementById('r-buffer').textContent = (fields.buffer * multiplier).toFixed(2) + ' µL';
+            document.getElementById('r-water').textContent = (fields.water * multiplier).toFixed(2) + ' µL';
+
+            resultsTitle.textContent = 'Final Master Mix Recipe for ' + samples + ' Sample' + (samples > 1 ? 's' : '');
+            resultsBox.classList.add('show');
+        }
+
+        function resetCalc() {
+            const ids = ['calc-samples', 'calc-dna', 'calc-poly', 'calc-fprimer', 'calc-rprimer', 'calc-dntps', 'calc-buffer', 'calc-water'];
+            ids.forEach((id) => { document.getElementById(id).value = ''; });
+            clearError();
+            resultsBox.classList.remove('show');
+        }
+
+        if (runBtn) runBtn.addEventListener('click', calculate);
+        if (resetBtn) resetBtn.addEventListener('click', resetCalc);
+    })();
+</script>
+
+<!-- ---------- Draggabl lab equipment ---------- -->
+<script>
+    (function () {
+        const draggables = document.querySelectorAll('.pipette, .lab-item');
+        const scene = document.querySelector('.scene');
+        const bin = document.getElementById('decon-bin');
+
+        function rectsOverlap(a, b) {
+            return !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
+        }
+
+        function changeTip(pipetteEl) {
+            const tip = pipetteEl.querySelector('.pip-tip');
+            if (!tip) return; 
+            tip.classList.remove('fresh-tip');
+            tip.classList.add('ejecting');
+            window.setTimeout(() => {
+                tip.classList.remove('ejecting');
+                tip.classList.add('fresh-tip');
+                window.setTimeout(() => tip.classList.remove('fresh-tip'), 260);
+            }, 240);
+        }
+
+        draggables.forEach((pip) => {
+            const isPipette = pip.classList.contains('pipette');
+            let offsetX = 0;
+            let offsetY = 0;
+            let dragging = false;
+
+            function lockPositionToPixels() {
+                const sceneRect = scene.getBoundingClientRect();
+                const pipRect = pip.getBoundingClientRect();
+                pip.style.left = (pipRect.left - sceneRect.left) + 'px';
+                pip.style.top = (pipRect.top - sceneRect.top) + 'px';
+                pip.style.right = 'auto';
+                pip.style.bottom = 'auto';
+            }
+
+            function getPoint(e) {
+                if (e.touches && e.touches.length) {
+                    return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+                }
+                return { x: e.clientX, y: e.clientY };
+            }
+
+            function startDrag(e) {
+                lockPositionToPixels();
+                const sceneRect = scene.getBoundingClientRect();
+                const point = getPoint(e);
+                const pipRect = pip.getBoundingClientRect();
+                offsetX = point.x - pipRect.left;
+                offsetY = point.y - pipRect.top;
+                dragging = true;
+                pip.classList.add('dragging');
+                e.preventDefault();
+            }
+
+            function moveDrag(e) {
+                if (!dragging) return;
+                const sceneRect = scene.getBoundingClientRect();
+                const point = getPoint(e);
+                let newLeft = point.x - sceneRect.left - offsetX;
+                let newTop = point.y - sceneRect.top - offsetY;
+
+                const maxLeft = sceneRect.width - pip.offsetWidth;
+                const maxTop = sceneRect.height - pip.offsetHeight;
+                newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+                newTop = Math.max(0, Math.min(newTop, maxTop));
+
+                pip.style.left = newLeft + 'px';
+                pip.style.top = newTop + 'px';
+
+                if (isPipette && bin) {
+                    const pipRect = pip.getBoundingClientRect();
+                    const binRect = bin.getBoundingClientRect();
+                    if (rectsOverlap(pipRect, binRect)) {
+                        bin.classList.add('bin-hover');
+                    } else {
+                        bin.classList.remove('bin-hover');
+                    }
+                }
+
+                e.preventDefault();
+            }
+
+            function endDrag() {
+                if (!dragging) return;
+                dragging = false;
+                pip.classList.remove('dragging');
+
+                if (isPipette && bin) {
+                    const pipRect = pip.getBoundingClientRect();
+                    const binRect = bin.getBoundingClientRect();
+                    if (rectsOverlap(pipRect, binRect)) {
+                        changeTip(pip);
+                    }
+                    bin.classList.remove('bin-hover');
+                }
+            }
+
+            pip.addEventListener('mousedown', startDrag);
+            pip.addEventListener('touchstart', startDrag, { passive: false });
+
+            window.addEventListener('mousemove', moveDrag, { passive: false });
+            window.addEventListener('touchmove', moveDrag, { passive: false });
+
+            window.addEventListener('mouseup', endDrag);
+            window.addEventListener('touchend', endDrag);
+        });
+
+        if (bin) {
+            bin.addEventListener('click', () => {
+                const pipettes = document.querySelectorAll('.pipette');
+                const binRect = bin.getBoundingClientRect();
+                let nearest = null;
+                let nearestDist = Infinity;
+
+                pipettes.forEach((p) => {
+                    const r = p.getBoundingClientRect();
+                    const dx = (r.left + r.width / 2) - (binRect.left + binRect.width / 2);
+                    const dy = (r.top + r.height / 2) - (binRect.top + binRect.height / 2);
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < nearestDist) {
+                        nearestDist = dist;
+                        nearest = p;
+                    }
+                });
+
+                if (nearest) changeTip(nearest);
+            });
+        }
+    })();
+</script>
+
+<!-- ---------- PCR Simulation---------- -->
+<script>
+    window.labMastermixReady = false;
+    (function () {
+        const benchTop = document.querySelector('.bench-top');
+        const contamOverlay = document.getElementById('contamination-overlay');
+        const mixTube = document.getElementById('mastermix-tube');
+        const mixFill = document.getElementById('mastermix-fill');
+        const toast = document.getElementById('sim-toast');
+        const stepClean = document.getElementById('step-clean');
+        const stepMastermix = document.getElementById('step-mastermix');
+        const stepVortex = document.getElementById('step-vortex');
+
+        function rectsOverlap(a, b) {
+            return !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
+        }
+
+        function showToast(message, kind) {
+            toast.textContent = message;
+            toast.className = 'show ' + (kind || 'info');
+            window.clearTimeout(showToast._t);
+            showToast._t = window.setTimeout(() => {
+                toast.className = '';
+            }, 2600);
+        }
+
+        function markStepCurrent(stepEl) {
+            document.querySelectorAll('.protocol-step').forEach((s) => s.classList.remove('sim-current'));
+            if (stepEl) stepEl.classList.add('sim-current');
+        }
+
+        function markStepDone(stepEl) {
+            stepEl.classList.remove('sim-current');
+            stepEl.classList.add('sim-done');
+        }
+
+        const cleanChemOrder = ['ethanol', 'bleach', 'cwater'];
+        const chemNiceNames = { ethanol: '70% ethanol', bleach: '10% bleach', cwater: 'water' };
+        const chemColors = { ethanol: '#e8d27a', bleach: '#9cd8c8', cwater: '#9cc8ec' };
+
+        let chemStepIndex = 0;      
+        let wipeLoadedWith = null;  
+        let cleanComplete = false;
+
+        const wipeEl = document.querySelector('[data-role="wipe"]');
+        const wipeShape = wipeEl ? wipeEl.querySelector('.wipe-shape') : null;
+
+        function setWipeVisual(role) {
+            if (!wipeShape) return;
+            if (!role) {
+                wipeShape.style.background = '';
+                wipeShape.style.boxShadow = '';
+            } else {
+                wipeShape.style.background = chemColors[role];
+                wipeShape.style.boxShadow = '0 0 6px ' + chemColors[role];
+            }
+        }
+
+        function handlePourOntoWipe(role) {
+            if (cleanComplete) {
+                showToast('Counter is already clean — nice work!', 'info');
+                return;
+            }
+            wipeLoadedWith = role;
+            setWipeVisual(role);
+            showToast((chemNiceNames[role] || role) + ' poured onto the wipe. Now wipe the counter.', 'info');
+        }
+
+        function handleWipeOnCounter() {
+            if (cleanComplete) {
+                showToast('Counter is already clean — nice work!', 'info');
+                return;
+            }
+
+            if (!wipeLoadedWith) {
+                showToast('The wipe is dry — pour a cleaning chemical onto it first.', 'info');
+                return;
+            }
+
+            const expected = cleanChemOrder[chemStepIndex];
+
+            if (wipeLoadedWith !== expected) {
+                showToast('That\u2019s not the right chemical for this step — try ' + chemNiceNames[expected] + '.', 'err');
+                wipeLoadedWith = null;
+                setWipeVisual(null);
+                return;
+            }
+
+            chemStepIndex++;
+            contamOverlay.style.opacity = String(1 - chemStepIndex / cleanChemOrder.length);
+            wipeLoadedWith = null;
+            setWipeVisual(null);
+
+            if (chemStepIndex >= cleanChemOrder.length) {
+                cleanComplete = true;
+                contamOverlay.classList.add('clean');
+                showToast('Countertop decontaminated! On to building the master mix.', 'ok');
+                markStepDone(stepClean);
+                markStepCurrent(stepMastermix);
+            } else {
+                const next = cleanChemOrder[chemStepIndex];
+                showToast('Counter wiped with ' + chemNiceNames[expected] + '. Next, pour ' + chemNiceNames[next] + ' onto the wipe.', 'ok');
+            }
+        }
+
+        const mixSequence = ['water', 'buffer', 'dntps', 'fprimer', 'rprimer', 'taq'];
+        const mixColors = {
+            water: '#80c8f0',
+            buffer: '#90d8a0',
+            dntps: '#70c8ec',
+            fprimer: '#e890c0',
+            rprimer: '#f0b070',
+            taq: '#f0c868'
+        };
+        let mixIndex = 0;
+        let mixComplete = false;
+        let bufferVortexed = false;
+        let mixVortexed = false;
+
+        function resetMixProgress() {
+            mixIndex = 0;
+            mixFill.style.height = '0px';
+            mixFill.style.background = 'transparent';
+            bufferVortexed = false;
+        }
+
+        function fillHeightForIndex(i) {
+            return Math.round((i / mixSequence.length) * 28) + 'px';
+        }
+
+        function handleMixDrop(role) {
+            if (!cleanComplete) {
+                showToast('Decontaminate the countertop first (step 1)!', 'err');
+                return;
+            }
+            if (mixComplete) {
+                showToast('Master mix is already complete — time to vortex it!', 'info');
+                return;
+            }
+
+            const expected = mixSequence[mixIndex];
+
+            if (role === 'buffer' && !bufferVortexed) {
+                showToast('Vortex the buffer before adding it! Click the buffer vial first.', 'err');
+                return;
+            }
+
+            if (role !== expected) {
+                const niceNames = {
+                    water: 'water', buffer: 'PCR buffer', dntps: 'dNTPs',
+                    fprimer: 'forward primer', rprimer: 'reverse primer', taq: 'Taq polymerase'
+                };
+                showToast('Not yet — add ' + niceNames[expected] + ' next.', 'err');
+                mixTube.classList.add('contaminated');
+                window.setTimeout(() => mixTube.classList.remove('contaminated'), 400);
+                return;
+            }
+
+            mixIndex++;
+            mixFill.style.background = mixColors[role];
+            mixFill.style.height = fillHeightForIndex(mixIndex);
+
+            if (mixIndex >= mixSequence.length) {
+                mixComplete = true;
+                showToast('Master mix assembled! Now vortex it (step 3).', 'ok');
+                markStepDone(stepMastermix);
+                markStepCurrent(stepVortex);
+            } else {
+                const niceNames = {
+                    water: 'water', buffer: 'PCR buffer', dntps: 'dNTPs',
+                    fprimer: 'forward primer', rprimer: 'reverse primer', taq: 'Taq polymerase'
+                };
+                showToast('Added. Next: ' + niceNames[mixSequence[mixIndex]] + '.', 'ok');
+            }
+        }
+
+        const bufferVial = document.querySelector('[data-role="buffer"]');
+        if (bufferVial) {
+            bufferVial.addEventListener('click', (e) => {
+                if (bufferVial.dataset.justDragged === '1') return; 
+                bufferVortexed = true;
+                bufferVial.style.animation = 'tube-shake 0.4s ease 2';
+                window.setTimeout(() => { bufferVial.style.animation = ''; }, 800);
+                showToast('Buffer vortexed — ready to add to the mastermix.', 'ok');
+            });
+        }
+
+        mixTube.addEventListener('click', () => {
+            if (mixVortexed) return; 
+            if (!mixComplete) {
+                showToast('Finish adding all reagents before vortexing the mastermix.', 'err');
+                return;
+            }
+            mixVortexed = true;
+            window.labMastermixReady = true; 
+            mixTube.style.animation = 'tube-shake 0.4s ease 3';
+            window.setTimeout(() => { mixTube.style.animation = ''; }, 900);
+            showToast('Mastermix vortexed! Ready to set your PCR parameters (step 4).', 'ok');
+            markStepDone(stepVortex);
+            window.dispatchEvent(new CustomEvent('mastermix-ready'));
+        });
+
+        markStepCurrent(stepClean);
+
+
+        const roledItems = document.querySelectorAll('.lab-item[data-role]');
+
+        roledItems.forEach((item) => {
+            const role = item.dataset.role;
+            const isChemBottle = cleanChemOrder.includes(role);
+            const isWipe = role === 'wipe';
+            const isMixItem = mixSequence.includes(role);
+            let wasDragging = false;
+
+            function onDown() {
+                wasDragging = true;
+            }
+
+            function onMove() {
+                if (!wasDragging) return;
+                if (isChemBottle && wipeEl) {
+                    const r1 = item.getBoundingClientRect();
+                    const r2 = wipeEl.getBoundingClientRect();
+                    wipeEl.classList.toggle('zone-hover', rectsOverlap(r1, r2));
+                }
+                if (isWipe && benchTop) {
+                    const r1 = item.getBoundingClientRect();
+                    const r2 = benchTop.getBoundingClientRect();
+                    benchTop.classList.toggle('zone-hover', rectsOverlap(r1, r2));
+                }
+            }
+
+            function onUp() {
+                if (!wasDragging) return;
+                wasDragging = false;
+
+                if (isChemBottle && wipeEl) {
+                    const r1 = item.getBoundingClientRect();
+                    const r2 = wipeEl.getBoundingClientRect();
+                    if (rectsOverlap(r1, r2)) {
+                        handlePourOntoWipe(role);
+                    }
+                    wipeEl.classList.remove('zone-hover');
+                }
+                if (isWipe && benchTop) {
+                    const r1 = item.getBoundingClientRect();
+                    const r2 = benchTop.getBoundingClientRect();
+                    if (rectsOverlap(r1, r2)) {
+                        handleWipeOnCounter();
+                    }
+                    benchTop.classList.remove('zone-hover');
+                }
+                if (isMixItem && mixTube) {
+                    const r1 = item.getBoundingClientRect();
+                    const r2 = mixTube.getBoundingClientRect();
+                    if (rectsOverlap(r1, r2)) {
+                        showToast('Use a pipette to draw up ' + (item.querySelector('.vial-label') ? item.querySelector('.vial-label').textContent : 'this reagent') + ' and transfer it to the tube.', 'info');
+                        item.dataset.justDragged = '1';
+                        window.setTimeout(() => { item.dataset.justDragged = '0'; }, 300);
+                    }
+                }
+            }
+
+            item.addEventListener('mousedown', onDown);
+            item.addEventListener('touchstart', onDown, { passive: true });
+
+            window.addEventListener('mousemove', onMove, { passive: true });
+            window.addEventListener('touchmove', onMove, { passive: true });
+            window.addEventListener('mouseup', onUp, { passive: true });
+            window.addEventListener('touchend', onUp, { passive: true });
+        });
+
+        // ---------------- Load the mastermix tube into the PCR machine ----------------
+        const pcrMachine = document.getElementById('pcr-machine');
+        window.labMixtureLoaded = false;
+
+        if (pcrMachine && mixTube) {
+            let tubeWasDragging = false;
+
+            function onTubeDown() {
+                tubeWasDragging = true;
+            }
+
+            function onTubeMove() {
+                if (!tubeWasDragging) return;
+                const r1 = mixTube.getBoundingClientRect();
+                const r2 = pcrMachine.getBoundingClientRect();
+                pcrMachine.classList.toggle('zone-hover', rectsOverlap(r1, r2));
+            }
+
+            function onTubeUp() {
+                if (!tubeWasDragging) return;
+                tubeWasDragging = false;
+
+                const r1 = mixTube.getBoundingClientRect();
+                const r2 = pcrMachine.getBoundingClientRect();
+                pcrMachine.classList.remove('zone-hover');
+
+                if (!rectsOverlap(r1, r2)) return;
+
+                if (window.labMixtureLoaded) {
+                    return;
+                }
+                if (!mixVortexed) {
+                    showToast('Vortex the mastermix before loading it into the PCR machine.', 'err');
+                    return;
+                }
+
+                window.labMixtureLoaded = true;
+                mixTube.classList.add('loaded-into-machine');
+                showToast('Mastermix loaded into the PCR machine. Close the lid and hit RUN!', 'ok');
+                window.dispatchEvent(new CustomEvent('mixture-loaded'));
+            }
+
+
+            mixTube.addEventListener('mousedown', onTubeDown);
+            mixTube.addEventListener('touchstart', onTubeDown, { passive: true });
+
+            window.addEventListener('mousemove', onTubeMove, { passive: true });
+            window.addEventListener('touchmove', onTubeMove, { passive: true });
+            window.addEventListener('mouseup', onTubeUp, { passive: true });
+            window.addEventListener('touchend', onTubeUp, { passive: true });
+        }
+
+        // ---------------- Pipette aspirate / dispense ----------------
+        const niceMixNames = {
+            water: 'water', buffer: 'PCR buffer', dntps: 'dNTPs',
+            fprimer: 'forward primer', rprimer: 'reverse primer', taq: 'Taq polymerase'
+        };
+        const mixVialEls = Array.from(document.querySelectorAll('.reagent-vial[data-role]'))
+            .filter((v) => mixSequence.includes(v.dataset.role));
+
+        function setPipetteLoaded(pip, role) {
+            pip.dataset.loadedRole = role;
+            const tip = pip.querySelector('.pip-tip');
+            if (tip) {
+                tip.style.background = mixColors[role];
+                tip.style.boxShadow = '0 0 5px ' + mixColors[role];
+            }
+        }
+
+        function clearPipetteLoaded(pip) {
+            delete pip.dataset.loadedRole;
+            const tip = pip.querySelector('.pip-tip');
+            if (tip) {
+                tip.style.background = '';
+                tip.style.boxShadow = '';
+            }
+        }
+
+        document.querySelectorAll('.pipette').forEach((pip) => {
+            let pipDragging = false;
+
+            function onPipDown() {
+                pipDragging = true;
+            }
+
+            function onPipMove() {
+                if (!pipDragging) return;
+                const pipRect = pip.getBoundingClientRect();
+                mixVialEls.forEach((vial) => {
+                    vial.classList.toggle('zone-hover', rectsOverlap(pipRect, vial.getBoundingClientRect()));
+                });
+                if (mixTube) {
+                    mixTube.classList.toggle('zone-hover', rectsOverlap(pipRect, mixTube.getBoundingClientRect()));
+                }
+            }
+
+            function onPipUp() {
+                if (!pipDragging) return;
+                pipDragging = false;
+
+                const pipRect = pip.getBoundingClientRect();
+
+                let hitVial = null;
+                mixVialEls.forEach((vial) => {
+                    vial.classList.remove('zone-hover');
+                    if (!hitVial && rectsOverlap(pipRect, vial.getBoundingClientRect())) {
+                        hitVial = vial;
+                    }
+                });
+
+                if (hitVial) {
+                    const role = hitVial.dataset.role;
+                    if (role === 'buffer' && !bufferVortexed) {
+                        showToast('Vortex the buffer before drawing it up! Click the buffer vial first.', 'err');
+                        return;
+                    }
+                    setPipetteLoaded(pip, role);
+                    showToast('Drew up ' + (niceMixNames[role] || role) + ' with the pipette. Now dispense it into the tube.', 'ok');
+                    return;
+                }
+
+                if (mixTube) {
+                    const overTube = rectsOverlap(pipRect, mixTube.getBoundingClientRect());
+                    mixTube.classList.remove('zone-hover');
+                    if (overTube) {
+                        const loaded = pip.dataset.loadedRole;
+                        if (!loaded) {
+                            showToast('Draw up a reagent with the pipette first.', 'err');
+                            return;
+                        }
+                        handleMixDrop(loaded);
+                        clearPipetteLoaded(pip);
+                    }
+                }
+            }
+
+            pip.addEventListener('mousedown', onPipDown);
+            pip.addEventListener('touchstart', onPipDown, { passive: true });
+            window.addEventListener('mousemove', onPipMove, { passive: true });
+            window.addEventListener('touchmove', onPipMove, { passive: true });
+            window.addEventListener('mouseup', onPipUp, { passive: true });
+            window.addEventListener('touchend', onPipUp, { passive: true });
+        });
+    })();
+</script>
+
+<!-- ---------- Protocol panel---------- -->
+<script>
+    (function () {
+        const panel = document.getElementById('protocol-panel');
+        const handle = document.getElementById('protocol-handle');
+        if (!panel || !handle) return;
+
+        handle.addEventListener('click', () => {
+            panel.classList.toggle('collapsed');
+            handle.innerHTML = panel.classList.contains('collapsed') ? '&#10095;' : '&#10094;';
+        });
+    })();
+</script>
+
+<!-- ---------- PCR machine---------- -->
+<script>
+    (function () {
+        const toast = document.getElementById('sim-toast');
+        const statusDot = document.getElementById('pcr-status-dot');
+        const tempEl = document.getElementById('pcr-temp');
+        const cycleEl = document.getElementById('pcr-cycle');
+        const timeEl = document.getElementById('pcr-time');
+        const wellsEls = () => document.querySelectorAll('#wells .well');
+
+        const runBtn = document.getElementById('pcr-run-btn');
+        const stopBtn = document.getElementById('pcr-stop-btn');
+        const menuBtn = document.getElementById('pcr-menu-btn');
+
+        const menuOverlay = document.getElementById('pcr-menu-overlay');
+        const menuPopup = document.getElementById('pcr-menu-popup');
+        const menuSave = document.getElementById('pcr-menu-save');
+        const menuCancel = document.getElementById('pcr-menu-cancel');
+
+        const stepPcrSetup = document.getElementById('step-pcr-setup');
+        const stepPcrRun = document.getElementById('step-pcr-run');
+
+        function showToast(message, kind) {
+            if (!toast) return;
+            toast.textContent = message;
+            toast.className = 'show ' + (kind || 'info');
+            window.clearTimeout(showToast._t);
+            showToast._t = window.setTimeout(() => { toast.className = ''; }, 2600);
+        }
+
+        function markStepCurrent(stepEl) {
+            document.querySelectorAll('.protocol-step').forEach((s) => s.classList.remove('sim-current'));
+            if (stepEl) stepEl.classList.add('sim-current');
+        }
+
+        function markStepDone(stepEl) {
+            if (!stepEl) return;
+            stepEl.classList.remove('sim-current');
+            stepEl.classList.add('sim-done');
+        }
+
+        let params = {
+            denatTemp: 95, denatTime: 30,
+            annealTemp: 58, annealTime: 30,
+            extendTemp: 72, extendTime: 60,
+            cycles: 30
+        };
+        let paramsSet = false;
+        let running = false;
+        let runTimer = null;
+
+        function isMastermixReady() {
+            return !!window.labMastermixReady;
+        }
+
+        function isMixtureLoaded() {
+            return !!window.labMixtureLoaded;
+        }
+
+        function refreshRunLock() {
+            if (isMastermixReady() && isMixtureLoaded()) {
+                runBtn.classList.remove('disabled');
+                statusDot.className = paramsSet ? 'idle' : 'locked';
+            } else {
+                runBtn.classList.add('disabled');
+                statusDot.className = 'locked';
+            }
+        }
+
+        window.addEventListener('mastermix-ready', refreshRunLock);
+        window.addEventListener('mixture-loaded', refreshRunLock);
+        refreshRunLock();
+
+        function openMenu() {
+            if (!isMastermixReady()) {
+                showToast('Vortex your mastermix first (step 3) before setting PCR parameters.', 'err');
+                return;
+            }
+            document.getElementById('pcr-denat-temp').value = params.denatTemp;
+            document.getElementById('pcr-denat-time').value = params.denatTime;
+            document.getElementById('pcr-anneal-temp').value = params.annealTemp;
+            document.getElementById('pcr-anneal-time').value = params.annealTime;
+            document.getElementById('pcr-extend-temp').value = params.extendTemp;
+            document.getElementById('pcr-extend-time').value = params.extendTime;
+            document.getElementById('pcr-cycles').value = params.cycles;
+
+            menuOverlay.classList.add('open');
+            menuPopup.classList.add('open');
+        }
+
+        function closeMenu() {
+            menuOverlay.classList.remove('open');
+            menuPopup.classList.remove('open');
+        }
+
+        menuBtn.addEventListener('click', openMenu);
+        menuCancel.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        menuSave.addEventListener('click', () => {
+            const denatTemp = parseFloat(document.getElementById('pcr-denat-temp').value);
+            const denatTime = parseFloat(document.getElementById('pcr-denat-time').value);
+            const annealTemp = parseFloat(document.getElementById('pcr-anneal-temp').value);
+            const annealTime = parseFloat(document.getElementById('pcr-anneal-time').value);
+            const extendTemp = parseFloat(document.getElementById('pcr-extend-temp').value);
+            const extendTime = parseFloat(document.getElementById('pcr-extend-time').value);
+            const cycles = parseInt(document.getElementById('pcr-cycles').value, 10);
+
+            const vals = [denatTemp, denatTime, annealTemp, annealTime, extendTemp, extendTime, cycles];
+            if (vals.some((v) => isNaN(v) || v <= 0)) {
+                showToast('Please fill in all PCR parameters with valid positive numbers.', 'err');
+                return;
+            }
+
+            params = { denatTemp, denatTime, annealTemp, annealTime, extendTemp, extendTime, cycles };
+            paramsSet = true;
+            closeMenu();
+            refreshRunLock();
+            showToast('Parameters saved. Hit RUN to start the PCR.', 'ok');
+            markStepDone(stepPcrSetup);
+            markStepCurrent(stepPcrRun);
+
+            tempEl.textContent = '--.-°C';
+            cycleEl.textContent = '-- / ' + params.cycles;
+            timeEl.textContent = '--:--';
+        });
+
+        // ---------------- RUN / STOP ----------------
+        function formatTime(seconds) {
+            const m = Math.floor(seconds / 60);
+            const s = Math.floor(seconds % 60);
+            return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+        }
+
+        function setWellsCycling(on) {
+            wellsEls().forEach((w) => w.classList.toggle('cycling', on));
+        }
+
+        function stopRun(finished) {
+            running = false;
+            if (runTimer) {
+                window.clearInterval(runTimer);
+                runTimer = null;
+            }
+            setWellsCycling(false);
+            runBtn.classList.remove('active-state');
+
+            if (finished) {
+                statusDot.className = 'done';
+                tempEl.textContent = 'DONE';
+                cycleEl.textContent = params.cycles + ' / ' + params.cycles;
+                timeEl.textContent = '00:00';
+                showToast('PCR run complete! Your amplified DNA is ready — the tube has been returned.', 'ok');
+                markStepDone(stepPcrRun);
+                returnAmplifiedTube();
+            } else {
+                statusDot.className = 'idle';
+                showToast('PCR run stopped.', 'info');
+            }
+        }
+
+        function returnAmplifiedTube() {
+            const tube = document.getElementById('mastermix-tube');
+            const fill = document.getElementById('mastermix-fill');
+            const machine = document.getElementById('pcr-machine');
+            if (!tube || !machine) return;
+
+            const sceneEl = document.querySelector('.scene');
+            const machineRect = machine.getBoundingClientRect();
+            const sceneRect = sceneEl.getBoundingClientRect();
+
+            tube.style.left = (machineRect.left - sceneRect.left + machineRect.width / 2 - tube.offsetWidth / 2) + 'px';
+            tube.style.top = (machineRect.top - sceneRect.top - 10) + 'px';
+            tube.style.right = 'auto';
+            tube.style.bottom = 'auto';
+
+            tube.classList.remove('loaded-into-machine');
+            if (fill) fill.classList.add('amplified-fill');
+
+            tube.classList.remove('amplified');
+            void tube.offsetWidth;
+            tube.classList.add('amplified');
+
+            tube.dataset.amplified = '1';
+            window.labMixtureLoaded = false; 
+            refreshRunLock();
+        }
+        const mastermixTubeEl = document.getElementById('mastermix-tube');
+        if (mastermixTubeEl) {
+            mastermixTubeEl.addEventListener('click', (e) => {
+                if (mastermixTubeEl.dataset.amplified === '1') {
+                    e.stopImmediatePropagation();
+                    showToast('Amplified DNA is ready.', 'ok');
+                }
+            }, true); 
+        }
+
+        runBtn.addEventListener('click', () => {
+            if (!isMastermixReady()) {
+                showToast('Vortex your mastermix first (step 3).', 'err');
+                return;
+            }
+            if (!paramsSet) {
+                showToast('Open MENU and set your PCR parameters first.', 'err');
+                return;
+            }
+            if (!isMixtureLoaded()) {
+                showToast('Drag your mastermix tube into the PCR machine first.', 'err');
+                return;
+            }
+            if (running) {
+                showToast('A run is already in progress.', 'info');
+                return;
+            }
+
+            running = true;
+            runBtn.classList.add('active-state');
+            statusDot.className = 'running';
+            setWellsCycling(true);
+            showToast('PCR run started — cycling through ' + params.cycles + ' cycles.', 'ok');
+
+            const phases = [
+                { name: 'Denaturation', temp: params.denatTemp, time: params.denatTime },
+                { name: 'Annealing', temp: params.annealTemp, time: params.annealTime },
+                { name: 'Extension', temp: params.extendTemp, time: params.extendTime }
+            ];
+
+            let currentCycle = 1;
+            let phaseIdx = 0;
+            let phaseSecondsLeft = phases[0].time;
+
+
+            const totalSimSeconds = params.cycles * (params.denatTime + params.annealTime + params.extendTime);
+            const TARGET_RUN_SECONDS = 22; 
+            const TICK_MS = 100; 
+            const totalTicks = (TARGET_RUN_SECONDS * 1000) / TICK_MS;
+            const secondsPerTick = Math.max(1, totalSimSeconds / totalTicks);
+
+            tempEl.textContent = phases[0].temp.toFixed(1) + '°C';
+            cycleEl.textContent = currentCycle + ' / ' + params.cycles;
+            timeEl.textContent = formatTime(phaseSecondsLeft);
+
+            runTimer = window.setInterval(() => {
+                phaseSecondsLeft -= secondsPerTick;
+
+                while (phaseSecondsLeft <= 0) {
+                    phaseIdx++;
+                    if (phaseIdx >= phases.length) {
+                        phaseIdx = 0;
+                        currentCycle++;
+                    }
+                    if (currentCycle > params.cycles) {
+                        stopRun(true);
+                        return;
+                    }
+                    phaseSecondsLeft += phases[phaseIdx].time;
+                }
+
+                tempEl.textContent = phases[phaseIdx].temp.toFixed(1) + '°C';
+                cycleEl.textContent = currentCycle + ' / ' + params.cycles;
+                timeEl.textContent = formatTime(phaseSecondsLeft);
+            }, TICK_MS);
+        });
+
+        stopBtn.addEventListener('click', () => {
+            if (!running) {
+                showToast('Nothing is running right now.', 'info');
+                return;
+            }
+            stopRun(false);
+        });
+    })();
+</script>
+
+
+<!-- ---------- Lab Fridge ---------- -->
+<script>
+    (function () {
+        const fridge = document.getElementById('lab-fridge');
+        const door = document.getElementById('fridge-door');
+        const storedTube = document.getElementById('fridge-stored-tube');
+        const realTube = document.getElementById('mastermix-tube');
+        const toast = document.getElementById('sim-toast');
+        let doorOpen = false;
+        let sampleStored = false;
+        let tubeWasDragging = false;
+
+        function showToast(msg, kind) {
+            if (!toast) return;
+            toast.textContent = msg;
+            toast.className = 'show ' + (kind || 'info');
+            window.clearTimeout(showToast._t);
+            showToast._t = window.setTimeout(() => { toast.className = ''; }, 2600);
+        }
+
+        fridge.addEventListener('click', (e) => {
+            if (e.target.closest('#fridge-stored-tube')) return;
+            doorOpen = !doorOpen;
+            door.classList.toggle('open', doorOpen);
+            fridge.classList.toggle('door-open', doorOpen);
+            if (doorOpen && sampleStored) {
+                showToast('Amplified DNA is stored at 4°C.', 'ok');
+            }
+        });
+
+        storedTube.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            showToast('Amplified DNA — stored at 4°C.', 'ok');
+        });
+
+        function rectsOverlap(a, b) {
+            return !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
+        }
+
+        if (realTube) {
+            realTube.addEventListener('mousedown', () => { tubeWasDragging = true; });
+            realTube.addEventListener('touchstart', () => { tubeWasDragging = true; }, { passive: true });
+        }
+
+        function onTubeUp() {
+            if (!tubeWasDragging) return;
+            tubeWasDragging = false;
+            if (!realTube) return;
+
+            // Only accept the tube if it's amplified and the door is open
+            if (realTube.dataset.amplified !== '1') return;
+            if (sampleStored) return;
+
+            const r1 = realTube.getBoundingClientRect();
+            const r2 = fridge.getBoundingClientRect();
+            if (!rectsOverlap(r1, r2)) return;
+
+            if (!doorOpen) {
+                showToast('Open the fridge door first!', 'err');
+                return;
+            }
+
+            sampleStored = true;
+            realTube.classList.add('into-fridge');
+            window.setTimeout(() => {
+                realTube.style.display = 'none';
+                storedTube.classList.add('visible');
+                showToast('Sample stored at 4°C. Close the fridge to keep it cold.', 'ok');
+            }, 300);
+        }
+
+        function onTubeMove() {
+            if (!tubeWasDragging || !realTube) return;
+            if (realTube.dataset.amplified !== '1' || sampleStored) return;
+            const r1 = realTube.getBoundingClientRect();
+            const r2 = fridge.getBoundingClientRect();
+            fridge.classList.toggle('zone-hover', rectsOverlap(r1, r2));
+        }
+
+        window.addEventListener('mouseup', onTubeUp, { passive: true });
+        window.addEventListener('touchend', onTubeUp, { passive: true });
+        window.addEventListener('mousemove', onTubeMove, { passive: true });
+        window.addEventListener('touchmove', onTubeMove, { passive: true });
+    })();
+</script>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

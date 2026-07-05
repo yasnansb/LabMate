@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UFT-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>LabMate Laboratory</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/> 
+    <link rel="stylesheet" href="styles.css"
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="images/logo.png" class ="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Main</a></li>
+                <li><a class="active" href="Page1.html">Machinaries</a></li>
+                <li><a href="Laboratory.html">Laboratory</a></li>
+                <li><a href="Contact-us.html">Contact Us</a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar" class="fas fa-outdent"> </i>
+        
+        </div>
+    
+    </section>
+    
+<section id="prodetails" class="section-p1">
+    <div class="single-pro-image">
+        <img src="images/products/f3.jpg" width="100%" id="MainImg" alt="">
+        
+    
+    
+    
+    </div>
+    
+    
+    <div class="single-pro-details">
+        <h2>Deoxynucleotide Triphosphates (dNTPs)</h2>
+        <h4>The building blocks. These are the loose bases (A, T, C, and G) that Taq polymerase uses to construct the new DNA copies. </h4>
+        <span>dNTPs (deoxynucleotide triphosphates) are the individual building blocks—dATP, dTTP, dCTP, and dGTP—that DNA polymerase uses to synthesize new DNA strands. Each one consists of a deoxyribose sugar, a phosphate group (triphosphate), and one of the four nitrogenous bases (A, T, C, or G). During PCR, Taq polymerase incorporates these free-floating dNTPs into the growing complementary strand, pairing them with the template bases (A with T, C with G). When the enzyme attaches a dNTP, it cleaves off two phosphate groups to release energy, leaving a single phosphate to form the backbone bond. For a standard PCR reaction, all four must be present in equal concentrations to ensure accurate and efficient amplification.</span>
+    
+    </div>
+    
+    </section>
+    
+    
+
+    
+<section id="footer" class="section-p1">
+    <h4>About Us</h4>
+    <p>We are university students who wanted to make an online lab for those who need it<br>hope you enjoy this experience with us!</p>
+    <div class="icons">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-telegram"></i>
+    </div>
+    
+    </section>
+
+<script>
+    var MainImg = document.getElementById("MainImg");
+    var smallimg = document.getElementsByClassName("small-img");
+    
+    smallimg[0].onclick = function(){
+        MainImg.src = smallimg[0].src;
+    }
+    smallimg[1].onclick = function(){
+        MainImg.src = smallimg[1].src;
+    }
+    smallimg[2].onclick = function(){
+        MainImg.src = smallimg[2].src;
+    }
+    smallimg[3].onclick = function(){
+        MainImg.src = smallimg[3].src;
+    }
+    
+    </script>
+    
+ 
+    <script src="script.js"></script>
+    
+
+
+</body>
+
+</html>

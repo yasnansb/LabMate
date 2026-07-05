@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UFT-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>LabMate Laboratory</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/> 
+    <link rel="stylesheet" href="styles.css"
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="images/logo.png" class ="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Main</a></li>
+                <li><a class="active" href="Page1.html">Machinaries</a></li>
+                <li><a href="Laboratory.html">Laboratory</a></li>
+                <li><a href="Contact-us.html">Contact Us</a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar" class="fas fa-outdent"> </i>
+        
+        </div>
+    
+    </section>
+    
+<section id="prodetails" class="section-p1">
+    <div class="single-pro-image">
+        <img src="images/products/f1.jpg" width="100%" id="MainImg" alt="">
+        
+    
+    
+    
+    </div>
+    
+    
+    <div class="single-pro-details">
+        <h2>Deoxyribonucleic Acid (DNA)</h2>
+        <h4>This is the sample containing the specific target gene or region of genetic material you want to replicate.</h4>
+        <span>DNA (deoxyribonucleic acid) is the molecule that carries the genetic instructions for life. It's structured as a double helix—two long strands of nucleotides wound around each other. Each nucleotide contains a sugar, a phosphate group, and one of four bases: adenine (A), thymine (T), cytosine (C), or guanine (G). These bases pair specifically (A with T, C with G) to form the rungs of the ladder. The sequence of these bases encodes the information needed to build and maintain an organism, directing protein synthesis and passing traits from one generation to the next.</span>
+    
+    </div>
+    
+    </section>
+    
+    
+
+    
+<section id="footer" class="section-p1">
+    <h4>About Us</h4>
+    <p>We are university students who wanted to make an online lab for those who need it<br>hope you enjoy this experience with us!</p>
+    <div class="icons">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-telegram"></i>
+    </div>
+    
+    </section>
+
+<script>
+    var MainImg = document.getElementById("MainImg");
+    var smallimg = document.getElementsByClassName("small-img");
+    
+    smallimg[0].onclick = function(){
+        MainImg.src = smallimg[0].src;
+    }
+    smallimg[1].onclick = function(){
+        MainImg.src = smallimg[1].src;
+    }
+    smallimg[2].onclick = function(){
+        MainImg.src = smallimg[2].src;
+    }
+    smallimg[3].onclick = function(){
+        MainImg.src = smallimg[3].src;
+    }
+    
+    </script>
+    
+ 
+    <script src="script.js"></script>
+    
+
+
+</body>
+
+</html>

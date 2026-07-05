@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UFT-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>LabMate Laboratory</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/> 
+    <link rel="stylesheet" href="styles.css"
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="images/logo.png" class ="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Main</a></li>
+                <li><a class="active" href="Page1.html">Machinaries</a></li>
+                <li><a href="Laboratory.html">Laboratory</a></li>
+                <li><a href="Contact-us.html">Contact Us</a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar" class="fas fa-outdent"> </i>
+        
+        </div>
+    
+    </section>
+    
+<section id="prodetails" class="section-p1">
+    <div class="single-pro-image">
+        <img src="images/products/f7.png" width="100%" id="MainImg" alt="">
+        
+        <div class="small-img-group">
+            <div class="small-img-col">
+                <img src="images/products/f7.png" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="images/products/f7 1.png" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="images/products/f7 2.png" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="images/products/f7 3.png" width="100%" class="small-img" alt="">
+            </div>
+        
+        </div>
+    
+    
+    
+    </div>
+    
+    
+    <div class="single-pro-details">
+        <h2>Pipette </h2>
+        <h4>A foundational laboratory tool used to measure, transfer, and dispense small, precise volumes of liquid</h4>
+        <span>Attach Tip: Dial the pipette to the desired volume. Firmly press the shaft into a sterile plastic tip; never use a pipette without a tip, as fluid will suck into the internal barrel and ruin the calibration.
+First Stop (Fill): Press the plunger down to the first stop (the first point of resistance). Submerge the tip 2–3 mm into the liquid and slowly release the plunger to draw the exact volume up.
+Second Stop (Empty): Place the tip against the wall of the target tube. Press the plunger down to the first stop, then push firmly past it to the second stop (all the way down) to blow out any remaining droplets.
+Eject: Keep the plunger fully depressed while lifting the pipette out of the tube. Release the plunger, then press the ejector button to discard the contaminated tip into the waste.
+</span>
+    
+    </div>
+    
+    </section>
+
+    
+    
+
+    
+<section id="footer" class="section-p1">
+    <h4>About Us</h4>
+    <p>We are university students who wanted to make an online lab for those who need it<br>hope you enjoy this experience with us!</p>
+    <div class="icons">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-telegram"></i>
+    </div>
+    
+    </section>
+
+<script>
+    var MainImg = document.getElementById("MainImg");
+    var smallimg = document.getElementsByClassName("small-img");
+    
+    smallimg[0].onclick = function(){
+        MainImg.src = smallimg[0].src;
+    }
+    smallimg[1].onclick = function(){
+        MainImg.src = smallimg[1].src;
+    }
+    smallimg[2].onclick = function(){
+        MainImg.src = smallimg[2].src;
+    }
+    smallimg[3].onclick = function(){
+        MainImg.src = smallimg[3].src;
+    }
+    
+    </script>
+    
+ 
+    <script src="script.js"></script>
+    
+
+
+</body>
+
+</html>

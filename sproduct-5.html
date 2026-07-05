@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UFT-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>LabMate Laboratory</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/> 
+    <link rel="stylesheet" href="styles.css"
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="images/logo.png" class ="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Main</a></li>
+                <li><a class="active" href="Page1.html">Machinaries</a></li>
+                <li><a href="Laboratory.html">Laboratory</a></li>
+                <li><a href="Contact-us.html">Contact Us</a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar" class="fas fa-outdent"> </i>
+        
+        </div>
+    
+    </section>
+    
+<section id="prodetails" class="section-p1">
+    <div class="single-pro-image">
+        <img src="images/products/f5.webp" width="100%" id="MainImg" alt="">
+        
+        <div class="small-img-group">
+            <div class="small-img-col">
+                <img src="images/products/f5%201.jpg" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="images/products/f5%202.webp" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="images/products/f5%203.webp" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="images/products/f5%204.jpg" width="100%" class="small-img" alt="">
+            </div>
+        
+        </div>
+    
+    
+    
+    </div>
+    
+    
+    <div class="single-pro-details">
+        <h2>Microscope</h2>
+        <h4>produces magnified visual images of objects too small to be seen with the naked eye</h4>
+        <span>A microscope is an instrument used to magnify small objects that are too tiny to be seen with the naked eye. It works by using a system of lenses—objective lenses near the specimen and an eyepiece—to bend light rays and enlarge the image. The two main types are optical (light) microscopes, which use visible light and glass lenses for viewing cells and tissues up to ~1000x, and electron microscopes, which use beams of electrons to achieve much higher magnification (up to millions of x) for viewing ultra-fine details like viruses or protein structures. Key specifications include resolution (the ability to distinguish two close points), magnification power, and numerical aperture. For lab use, you also have inverted microscopes for viewing live cells in culture dishes and fluorescence microscopes that use specific wavelengths to tag and visualize particular molecules.</span>
+    </div>
+    
+    </section>
+    </section>
+    
+<section id="footer" class="section-p1">
+    <h4>About Us</h4>
+    <p>We are university students who wanted to make an online lab for those who need it<br>hope you enjoy this experience with us!</p>
+    <div class="icons">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-telegram"></i>
+    </div>
+    
+    </section>
+
+<script>
+    var MainImg = document.getElementById("MainImg");
+    var smallimg = document.getElementsByClassName("small-img");
+    
+    smallimg[0].onclick = function(){
+        MainImg.src = smallimg[0].src;
+    }
+    smallimg[1].onclick = function(){
+        MainImg.src = smallimg[1].src;
+    }
+    smallimg[2].onclick = function(){
+        MainImg.src = smallimg[2].src;
+    }
+    smallimg[3].onclick = function(){
+        MainImg.src = smallimg[3].src;
+    }
+    
+    </script>
+    
+ 
+    <script src="script.js"></script>
+    
+
+
+</body>
+
+</html>
